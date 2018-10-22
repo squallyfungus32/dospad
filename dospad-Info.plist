@@ -17,7 +17,7 @@
 		<string>Icon-iPad-76.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>8HLDK844H7.net.litchie.dospad</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
