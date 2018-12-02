@@ -30,6 +30,8 @@
 #import "UIExtendedTextField.h"
 #endif
 
+#include "SDL_compat.h"
+
 #ifdef IPHONEOS
 // For calling
 #import "SDL_keyboard_c.h"
@@ -158,7 +160,7 @@ void SDL_init_keyboard()
             mice[i].id = i;
             mice[i].driverdata = NULL;
             SDL_AddMouse(&mice[i], "Mouse", 0, 0, 1);
-            SDL_SetRelativeMouseMode(i, SDL_TRUE);
+            SDL_SetRelativeMouseMode(i, SDL_FALSE);
         }
     }
 #endif
@@ -187,6 +189,8 @@ void SDL_init_keyboard()
 		SDL_SelectMouse(i);
 		CGPoint locationInView = [touch locationInView: self];
 		
+        SDL_WarpMouse(locationInView.x, locationInView.y);
+        
 		/* set driver data to touch object, we'll use touch object later */
 		mice[i].driverdata = [touch retain];
 		
