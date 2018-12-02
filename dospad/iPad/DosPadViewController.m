@@ -572,6 +572,10 @@ static struct {
 - (void)toggleScreenSize
 {
     useOriginalScreenSize = !useOriginalScreenSize;
+    if (useOriginalScreenSize)
+        [self addInputSource:InputSource_PCKeyboard];
+    else
+        [self removeInputSource:InputSource_PCKeyboard];
     [self updateUI];
 }
 
