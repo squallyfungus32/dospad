@@ -527,8 +527,7 @@ static struct {
 				self.view.bounds.size.height/2);
 		}
 		
-        float scale=1;
-        if (sw < 640) { scale = 640.0f/sw; }
+        float scale=640.0f/sw;
         screenView.transform=CGAffineTransformMakeScale(scale,scale*additionalScaleY);
         screenView.center=CGPointMake(384, 314);
         btnShowCommands.alpha = 1;
