@@ -469,6 +469,7 @@ static struct {
     [self updateBackground];    
     if ([self isFullscreen]) 
     {
+        [baseView removeFromSuperview];
         [self.view insertSubview:self.screenView atIndex:0];
         keyboard.alpha=0;
         sliderInput.alpha=0;
@@ -506,6 +507,12 @@ static struct {
     }
     else 
     {
+        if (baseView.superview != self.view)
+        {
+            [self.view addSubview:baseView];
+            baseView.center = CGPointMake(self.view.bounds.size.width/2, self.view.bounds.size.height/2);
+        }
+        
         [baseView insertSubview:self.screenView atIndex:0];
 		
 		// Scaling baseView to fill self.view as much as possible
