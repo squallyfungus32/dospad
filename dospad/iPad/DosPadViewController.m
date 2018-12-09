@@ -419,6 +419,11 @@ static struct {
         gpad.dpadMovable = DEFS_GET_INT(kDPadMovable);
         gpad.alpha = [self floatAlpha];
         [self.view insertSubview:gpad belowSubview:fullscreenPanel];
+        for (DPadView *v in gpad.subviews)
+        {
+            v.center = CGPointMake(self.view.frame.size.width - (v.frame.size.width/2) - 50, self.view.frame.size.height - (v.frame.size.height/2) - 50);
+            printf("Placing dpad at %f, %f",v.frame.origin.x,v.frame.origin.y);
+        }
     }
     return gpad;
 }

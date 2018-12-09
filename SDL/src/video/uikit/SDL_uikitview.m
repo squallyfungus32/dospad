@@ -71,12 +71,15 @@ void SDL_init_keyboard()
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 #endif
     
+    [self setupGestureRecognizers];
+    
 	int i;
 	for (i=0; i<MAX_SIMULTANEOUS_TOUCHES; i++) {
         mice[i].id = i;
 		mice[i].driverdata = NULL;
 		SDL_AddMouse(&mice[i], "Mouse", 0, 0, 1);
 	}
+    
 	self.multipleTouchEnabled = YES;
     
 	return self;
@@ -152,6 +155,253 @@ void SDL_init_keyboard()
 
 #endif
 
+- (void)setupGestureRecognizers {
+    {
+        UIPanGestureRecognizer *panOneFinger = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+        panOneFinger.maximumNumberOfTouches = 1;
+        panOneFinger.delaysTouchesBegan = NO;
+        panOneFinger.delaysTouchesEnded = NO;
+        panOneFinger.cancelsTouchesInView = YES;
+        
+        UISwipeGestureRecognizer *swipeRightOneFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+        swipeRightOneFinger.direction = UISwipeGestureRecognizerDirectionRight;
+        swipeRightOneFinger.numberOfTouchesRequired = 1;
+        swipeRightOneFinger.delaysTouchesBegan = NO;
+        swipeRightOneFinger.delaysTouchesEnded = NO;
+        swipeRightOneFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeRightTwoFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+        swipeRightTwoFinger.direction = UISwipeGestureRecognizerDirectionRight;
+        swipeRightTwoFinger.numberOfTouchesRequired = 2;
+        swipeRightTwoFinger.delaysTouchesBegan = NO;
+        swipeRightTwoFinger.delaysTouchesEnded = NO;
+        swipeRightTwoFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeLeftOneFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
+        swipeLeftOneFinger.direction = UISwipeGestureRecognizerDirectionLeft;
+        swipeLeftOneFinger.numberOfTouchesRequired = 1;
+        swipeLeftOneFinger.delaysTouchesBegan = NO;
+        swipeLeftOneFinger.delaysTouchesEnded = NO;
+        swipeLeftOneFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeLeftTwoFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
+        swipeLeftTwoFinger.direction = UISwipeGestureRecognizerDirectionLeft;
+        swipeLeftTwoFinger.numberOfTouchesRequired = 2;
+        swipeLeftTwoFinger.delaysTouchesBegan = NO;
+        swipeLeftTwoFinger.delaysTouchesEnded = NO;
+        swipeLeftTwoFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeUpOneFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp:)];
+        swipeUpOneFinger.direction = UISwipeGestureRecognizerDirectionUp;
+        swipeUpOneFinger.numberOfTouchesRequired = 1;
+        swipeUpOneFinger.delaysTouchesBegan = NO;
+        swipeUpOneFinger.delaysTouchesEnded = NO;
+        swipeUpOneFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeUpTwoFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp:)];
+        swipeUpTwoFinger.direction = UISwipeGestureRecognizerDirectionUp;
+        swipeUpTwoFinger.numberOfTouchesRequired = 2;
+        swipeUpTwoFinger.delaysTouchesBegan = NO;
+        swipeUpTwoFinger.delaysTouchesEnded = NO;
+        swipeUpTwoFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeDownOneFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown:)];
+        swipeDownOneFinger.direction = UISwipeGestureRecognizerDirectionDown;
+        swipeDownOneFinger.numberOfTouchesRequired = 1;
+        swipeDownOneFinger.delaysTouchesBegan = NO;
+        swipeDownOneFinger.delaysTouchesEnded = NO;
+        swipeDownOneFinger.cancelsTouchesInView = NO;
+        
+        UISwipeGestureRecognizer *swipeDownTwoFinger = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown:)];
+        swipeDownTwoFinger.direction = UISwipeGestureRecognizerDirectionDown;
+        swipeDownTwoFinger.numberOfTouchesRequired = 2;
+        swipeDownTwoFinger.delaysTouchesBegan = NO;
+        swipeDownTwoFinger.delaysTouchesEnded = NO;
+        swipeDownTwoFinger.cancelsTouchesInView = NO;
+/*
+        UITapGestureRecognizer *doubleTapTwoFinger = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+        doubleTapTwoFinger.numberOfTapsRequired = 2;
+        doubleTapTwoFinger.numberOfTouchesRequired = 2;
+        doubleTapTwoFinger.delaysTouchesBegan = NO;
+        doubleTapTwoFinger.delaysTouchesEnded = NO;
+ */
+        UITapGestureRecognizer *singleTapOneFinger = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+        singleTapOneFinger.numberOfTapsRequired = 1;
+        singleTapOneFinger.numberOfTouchesRequired = 1;
+        singleTapOneFinger.delaysTouchesBegan = NO;
+        singleTapOneFinger.delaysTouchesEnded = NO;
+        singleTapOneFinger.cancelsTouchesInView = NO;
+ 
+        
+        UITapGestureRecognizer *singleTapTwoFinger = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
+        singleTapTwoFinger.numberOfTapsRequired = 1;
+        singleTapTwoFinger.numberOfTouchesRequired = 2;
+        singleTapTwoFinger.delaysTouchesBegan = NO;
+        singleTapTwoFinger.delaysTouchesEnded = NO;
+        singleTapTwoFinger.cancelsTouchesInView = NO;
+        
+        UILongPressGestureRecognizer *singlePressOneFinger = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(singlePress:)];
+        singlePressOneFinger.numberOfTapsRequired = 0;
+        singlePressOneFinger.numberOfTouchesRequired = 1;
+        singlePressOneFinger.allowableMovement = 10;
+        singlePressOneFinger.minimumPressDuration = 0.3;
+        singlePressOneFinger.delaysTouchesBegan = NO;
+        singlePressOneFinger.delaysTouchesEnded = NO;
+        singlePressOneFinger.cancelsTouchesInView = YES;
+        
+        UILongPressGestureRecognizer *singlePressTwoFinger = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(singlePress:)];
+        singlePressTwoFinger.numberOfTapsRequired = 0;
+        singlePressTwoFinger.numberOfTouchesRequired = 2;
+        singlePressTwoFinger.allowableMovement = 5;
+        singlePressTwoFinger.minimumPressDuration = 0.3;
+        singlePressTwoFinger.delaysTouchesBegan = NO;
+        singlePressTwoFinger.delaysTouchesEnded = NO;
+        singlePressTwoFinger.cancelsTouchesInView = YES;
+        
+        [self addGestureRecognizer:panOneFinger];
+        [self addGestureRecognizer:swipeRightOneFinger];
+        [self addGestureRecognizer:swipeRightTwoFinger];
+        [self addGestureRecognizer:swipeLeftOneFinger];
+        [self addGestureRecognizer:swipeLeftTwoFinger];
+        [self addGestureRecognizer:swipeUpOneFinger];
+        [self addGestureRecognizer:swipeUpTwoFinger];
+        [self addGestureRecognizer:swipeDownOneFinger];
+        [self addGestureRecognizer:swipeDownTwoFinger];
+//        [self addGestureRecognizer:doubleTapTwoFinger];
+        [self addGestureRecognizer:singleTapOneFinger];
+        [self addGestureRecognizer:singleTapTwoFinger];
+        [self addGestureRecognizer:singlePressOneFinger];
+        [self addGestureRecognizer:singlePressTwoFinger];
+        
+        [panOneFinger release];
+        [swipeRightOneFinger release];
+        [swipeRightTwoFinger release];
+        [swipeLeftOneFinger release];
+        [swipeLeftTwoFinger release];
+        [swipeUpOneFinger release];
+        [swipeUpTwoFinger release];
+        [swipeDownOneFinger release];
+        [swipeDownTwoFinger release];
+//        [doubleTapTwoFinger release];
+        [singleTapOneFinger release];
+        [singleTapTwoFinger release];
+        [singlePressOneFinger release];
+        [singlePressTwoFinger release];
+    }
+}
+
+- (void)pan:(UIPanGestureRecognizer *)recognizer {
+    
+    CGPoint point = [recognizer locationInView:self];
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan)
+        SDL_WarpMouse(point.x, point.y);
+    else if (recognizer.state == UIGestureRecognizerStateChanged)
+        SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    else if (recognizer.state == UIGestureRecognizerStateEnded)
+        return;
+}
+
+- (void)swipeRight:(UISwipeGestureRecognizer *)recognizer {
+    if (recognizer.numberOfTouches == 1)
+        return;
+    else if (recognizer.numberOfTouches == 2)
+        return;
+    return;
+}
+
+- (void)swipeLeft:(UISwipeGestureRecognizer *)recognizer {
+    if (recognizer.numberOfTouches == 1)
+        return;
+    else if (recognizer.numberOfTouches == 2)
+        return;
+    return;
+}
+
+- (void)swipeUp:(UISwipeGestureRecognizer *)recognizer {
+    if (recognizer.numberOfTouches == 1)
+        return;
+    else if (recognizer.numberOfTouches == 2)
+        return;
+    return;
+}
+
+- (void)swipeDown:(UISwipeGestureRecognizer *)recognizer {
+    if (recognizer.numberOfTouches == 1)
+        return;
+    else if (recognizer.numberOfTouches == 2)
+        return;
+    return;
+}
+
+- (void)doubleTap:(UITapGestureRecognizer *)recognizer {
+    return;
+}
+
+- (void)singleTap:(UITapGestureRecognizer *)recognizer {
+
+    CGPoint point = [recognizer locationInView:self];
+    
+    SDL_WarpMouse(point.x, point.y);
+    
+    if (recognizer.numberOfTouches == 1)
+    {
+        SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_LEFT);
+        // Must have or won't work
+        [NSThread sleepForTimeInterval:0.1];
+        SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_LEFT);
+    }
+    else if (recognizer.numberOfTouches == 2)
+    {
+        SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
+        // Must have or won't work
+        [NSThread sleepForTimeInterval:0.1];
+        SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_RIGHT);
+    }
+    return;
+}
+
+- (void)singlePress:(UILongPressGestureRecognizer *)recognizer {
+
+    CGPoint point = [recognizer locationInView:self];
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan)
+    {
+        SDL_WarpMouse(point.x, point.y);
+        
+        if (recognizer.numberOfTouches == 1)
+            SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_LEFT);
+        else if (recognizer.numberOfTouches == 2)
+            SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged)
+        SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    else if (recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        if (recognizer.numberOfTouches == 1)
+            SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_LEFT);
+        else if (recognizer.numberOfTouches == 2)
+            SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_RIGHT);
+    }
+    
+}
+
+- (void)doublePress:(UILongPressGestureRecognizer *)recognizer {
+    
+    CGPoint point = [recognizer locationInView:self];
+    
+    if (recognizer.state == UIGestureRecognizerStateBegan)
+    {
+        SDL_WarpMouse(point.x, point.y);
+        SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged)
+        SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    else if (recognizer.state == UIGestureRecognizerStateEnded)
+        SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_RIGHT);
+}
+
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 #ifdef IPHONEOS
     if (SDL_GetNumMice() == 0) {
@@ -164,6 +414,9 @@ void SDL_init_keyboard()
         }
     }
 #endif
+    SDL_SelectMouse(0);
+    return;
+    
 	NSEnumerator *enumerator = [touches objectEnumerator];
 	UITouch *touch =(UITouch*)[enumerator nextObject];
 	
@@ -237,6 +490,7 @@ void SDL_init_keyboard()
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    return;
 	NSEnumerator *enumerator = [touches objectEnumerator];
 	UITouch *touch=nil;
 	
@@ -313,7 +567,7 @@ void SDL_init_keyboard()
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	
+    return;
 	NSEnumerator *enumerator = [touches objectEnumerator];
 	UITouch *touch=nil;
 	
