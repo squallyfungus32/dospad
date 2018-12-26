@@ -83,21 +83,21 @@ static void StripSpaces(char*&args,char also) {
 		args++;
 }
 
-static char* ExpandDot(char*args, char* buffer) {
+static char* ExpandDot(char*args, char* buffer , size_t bufsize) {
 	if(*args == '.') {
 		if(*(args+1) == 0){
-			strcpy(buffer,"*.*");
+			safe_strncpy(buffer, "*.*", bufsize);
 			return buffer;
 		}
 		if( (*(args+1) != '.') && (*(args+1) != '\\') ) {
 			buffer[0] = '*';
 			buffer[1] = 0;
-			strcat(buffer,args);
+			if (bufsize > 2) strncat(buffer,args,bufsize - 1 /*used buffer portion*/ - 1 /*trailing zero*/  );
 			return buffer;
 		} else
-			strcpy (buffer, args);
+			safe_strncpy (buffer, args, bufsize);
 	}
-	else strcpy(buffer,args);
+	else safe_strncpy(buffer,args, bufsize);
 	return buffer;
 }
 
@@ -189,7 +189,7 @@ void DOS_Shell::CMD_DELETE(char * args) {
 
 	char full[DOS_PATHLENGTH];
 	char buffer[CROSS_LEN];
-	args = ExpandDot(args,buffer);
+	args = ExpandDot(args,buffer, CROSS_LEN);
 	StripSpaces(args);
 	if (!DOS_Canonicalize(args,full)) { WriteOut(MSG_Get("SHELL_ILLEGAL_PATH"));return; }
 //TODO Maybe support confirmation for *.* like dos does.	
@@ -398,12 +398,6 @@ void DOS_Shell::CMD_DIR(char * args) {
 	char numformat[16];
 	char path[DOS_PATHLENGTH];
 
-
-	Bit8u drive = DOS_GetDefaultDrive();
-	if (Drives[drive]) {
-		Drives[drive]->EmptyCache();
-	}
-
 	std::string line;
 	if(GetEnvStr("DIRCMD",line)){
 		std::string::size_type idx = line.find('=');
@@ -447,7 +441,7 @@ void DOS_Shell::CMD_DIR(char * args) {
 			break;
 		}
 	}
-	args = ExpandDot(args,buffer);
+	args = ExpandDot(args,buffer,CROSS_LEN);
 
 	if (!strrchr(args,'*') && !strrchr(args,'?')) {
 		Bit16u attribute=0;
@@ -926,6 +920,7 @@ nextfile:
 	do {
 		n=1;
 		DOS_ReadFile(handle,&c,&n);
+		if (c==0x1a) break; // stop at EOF
 		DOS_WriteFile(STDOUT,&c,&n);
 	} while (n);
 	DOS_CloseFile(handle);
@@ -940,7 +935,8 @@ void DOS_Shell::CMD_PAUSE(char * args){
 	HELP("PAUSE");
 	WriteOut(MSG_Get("SHELL_CMD_PAUSE"));
 	Bit8u c;Bit16u n=1;
-	DOS_ReadFile (STDIN,&c,&n);
+	DOS_ReadFile(STDIN,&c,&n);
+	if (c==0) DOS_ReadFile(STDIN,&c,&n); // read extended key
 }
 
 void DOS_Shell::CMD_CALL(char * args){
