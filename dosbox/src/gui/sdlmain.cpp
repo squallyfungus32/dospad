@@ -1453,6 +1453,7 @@ void GFX_Events() {
 	//In idle mode 3000-4000 polls are done per second without this check.
 	//Macs, with this code,  max 250 polls per second. (non-macs unused default max 500)
 	//Currently not implemented for all platforms, given the ALT-TAB stuff for WIN32.
+#endif
 #if defined (MACOSX)
 	static int last_check = 0;
 	int current_check = GetTicks();
