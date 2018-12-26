@@ -593,19 +593,12 @@ static void cache_init(bool enable) {
 #else
 #ifndef IPHONEOS
 			cache_code_start_ptr=(Bit8u*)malloc(CACHE_TOTAL+CACHE_MAXSIZE+PAGESIZE_TEMP-1+PAGESIZE_TEMP);
-#else
-            cache_code_start_ptr=(Bit8u*)mmap(0,CACHE_TOTAL+CACHE_MAXSIZE+PAGESIZE_TEMP-1+PAGESIZE_TEMP,
-                                      PROT_WRITE|PROT_READ|PROT_EXEC,
-                                      MAP_PRIVATE|MAP_ANON, 0, 0);
-            if (cache_code_start_ptr==(Bit8u*)-1) {
-                E_Exit("Allocating dynamic cache failed");
-            }
 #endif            
 #endif
 			if(!cache_code_start_ptr) E_Exit("Allocating dynamic cache failed");
 
 			// align the cache at a page boundary
-			cache_code=(Bit8u*)(((long)cache_code_start_ptr + PAGESIZE_TEMP-1) & ~(PAGESIZE_TEMP-1)); //MEM LEAK. store old pointer if you want to free it.
+			cache_code=(Bit8u*)(((Bitu)cache_code_start_ptr + PAGESIZE_TEMP-1) & ~(PAGESIZE_TEMP-1));//Bitu is same size as a pointer.
 
 			cache_code_link_blocks=cache_code;
 			cache_code=cache_code+PAGESIZE_TEMP;
