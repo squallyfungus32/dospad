@@ -1276,11 +1276,10 @@ static void GUI_StartUp(Section * sec) {
 #endif	//OPENGL
 	/* Initialize screen for first time */
 #ifdef IPHONEOS
-	sdl.surface=SDL_SetVideoMode(640,400,16,0);
+    sdl.surface=SDL_SetVideoMode_Wrap(640,400,16,0);
 #else
-	sdl.surface=SDL_SetVideoMode(640,400,0,0);
+    sdl.surface=SDL_SetVideoMode_Wrap(640,400,0,0);
 #endif
-	sdl.surface=SDL_SetVideoMode_Wrap(640,400,0,0);
 	if (sdl.surface == NULL) E_Exit("Could not initialize video: %s",SDL_GetError());
 	sdl.desktop.bpp=sdl.surface->format->BitsPerPixel;
 	if (sdl.desktop.bpp==24) {
@@ -1924,14 +1923,13 @@ int main(int argc, char* argv[]) {
 	 */
 	putenv(const_cast<char*>("SDL_DISABLE_LOCK_KEYS=1"));
 #endif
-#ifdef IPHONEOS
-	if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO|SDL_INIT_TIMER
-#else
-	if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_CDROM
-#endif                       
 	// Don't init timers, GetTicks seems to work fine and they can use a fair amount of power (Macs again) 
 	// Please report problems with audio and other things.
-	if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO | /*SDL_INIT_TIMER |*/ SDL_INIT_CDROM
+#ifdef IPHONEOS
+        if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO/*|SDL_INIT_TIMER*/
+#else
+        if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO/*|SDL_INIT_TIMER*/|SDL_INIT_CDROM
+#endif
 		|SDL_INIT_NOPARACHUTE
 		) < 0 ) E_Exit("Can't init SDL %s",SDL_GetError());
 	sdl.inited = true;
