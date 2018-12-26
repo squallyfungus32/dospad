@@ -221,8 +221,13 @@ struct SDL_Block {
 	Bit32u focus_ticks;
 #endif
 	// state of alt-keys for certain special handlings
-	Bit8u laltstate;
-	Bit8u raltstate;
+#ifdef IPHONEOS
+    Bit32u laltstate;
+    Bit32u raltstate;
+#else
+    Bit8u laltstate;
+    Bit8u raltstate;
+#endif
 };
 
 static SDL_Block sdl;
@@ -1447,12 +1452,12 @@ void GFX_LosingFocus(void) {
 #endif
 
 void GFX_Events() {
+    //Don't poll too often. This can be heavy on the OS, especially Macs.
+    //In idle mode 3000-4000 polls are done per second without this check.
+    //Macs, with this code,  max 250 polls per second. (non-macs unused default max 500)
+    //Currently not implemented for all platforms, given the ALT-TAB stuff for WIN32.
 #ifdef IPHONEOS
     dospad_should_pause();
-	//Don't poll too often. This can be heavy on the OS, especially Macs.
-	//In idle mode 3000-4000 polls are done per second without this check.
-	//Macs, with this code,  max 250 polls per second. (non-macs unused default max 500)
-	//Currently not implemented for all platforms, given the ALT-TAB stuff for WIN32.
 #endif
 #if defined (MACOSX)
 	static int last_check = 0;

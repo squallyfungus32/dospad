@@ -56,6 +56,11 @@
 		2A4546F917D2809F00D18563 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2A9CD12CD99EC0091B859 /* CoreMIDI.framework */; };
 		2A4546FA17D2812100D18563 /* PianoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F3FE12DB4F0E00427836 /* PianoKeyboard.m */; };
 		2A4546FC17D2889700D18563 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4546FB17D2889700D18563 /* Default-568h@2x.png */; };
+		37992B2721D322BA00817702 /* emu.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2221D322B900817702 /* emu.h */; };
+		37992B2821D322BA00817702 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37992B2321D322B900817702 /* sn76496.cpp */; };
+		37992B2921D322BA00817702 /* saa1099.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37992B2421D322BA00817702 /* saa1099.cpp */; };
+		37992B2A21D322BA00817702 /* sn76496.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2521D322BA00817702 /* sn76496.h */; };
+		37992B2B21D322BA00817702 /* saa1099.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2621D322BA00817702 /* saa1099.h */; };
 		9222DD4B1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
 		9222DD4C1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
 		9222DD4F1CC43B9200B321B9 /* KeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4E1CC43B9200B321B9 /* KeyMapper.m */; };
@@ -926,6 +931,11 @@
 		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A4546FB17D2889700D18563 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		37992B2221D322B900817702 /* emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = emu.h; path = mame/emu.h; sourceTree = "<group>"; };
+		37992B2321D322B900817702 /* sn76496.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sn76496.cpp; path = mame/sn76496.cpp; sourceTree = "<group>"; };
+		37992B2421D322BA00817702 /* saa1099.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = saa1099.cpp; path = mame/saa1099.cpp; sourceTree = "<group>"; };
+		37992B2521D322BA00817702 /* sn76496.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sn76496.h; path = mame/sn76496.h; sourceTree = "<group>"; };
+		37992B2621D322BA00817702 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = saa1099.h; path = mame/saa1099.h; sourceTree = "<group>"; };
 		9222DD491CC43ADC00B321B9 /* MfiGameControllerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MfiGameControllerHandler.h; sourceTree = "<group>"; };
 		9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MfiGameControllerHandler.m; sourceTree = "<group>"; };
 		9222DD4D1CC43B9200B321B9 /* KeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyMapper.h; sourceTree = "<group>"; };
@@ -2038,6 +2048,11 @@
 		E71E619411B550FD00EC5A05 /* hardware */ = {
 			isa = PBXGroup;
 			children = (
+				37992B2221D322B900817702 /* emu.h */,
+				37992B2421D322BA00817702 /* saa1099.cpp */,
+				37992B2621D322BA00817702 /* saa1099.h */,
+				37992B2321D322B900817702 /* sn76496.cpp */,
+				37992B2521D322BA00817702 /* sn76496.h */,
 				E71E619511B550FD00EC5A05 /* adlib.cpp */,
 				E71E619611B550FD00EC5A05 /* adlib.h */,
 				E71E619711B550FD00EC5A05 /* cmos.cpp */,
@@ -2862,6 +2877,7 @@
 				E71E61FC11B550FD00EC5A05 /* control.h in Headers */,
 				E71E61FD11B550FD00EC5A05 /* cpu.h in Headers */,
 				E71E61FE11B550FD00EC5A05 /* cross.h in Headers */,
+				37992B2A21D322BA00817702 /* sn76496.h in Headers */,
 				E71E61FF11B550FD00EC5A05 /* debug.h in Headers */,
 				E71E620011B550FD00EC5A05 /* dma.h in Headers */,
 				E71E620111B550FD00EC5A05 /* dos_inc.h in Headers */,
@@ -2873,6 +2889,8 @@
 				E71E620711B550FD00EC5A05 /* ipx.h in Headers */,
 				E71E620811B550FD00EC5A05 /* ipxserver.h in Headers */,
 				E71E620911B550FD00EC5A05 /* joystick.h in Headers */,
+				37992B2B21D322BA00817702 /* saa1099.h in Headers */,
+				37992B2721D322BA00817702 /* emu.h in Headers */,
 				E71E620A11B550FD00EC5A05 /* keyboard.h in Headers */,
 				E71E620B11B550FD00EC5A05 /* logging.h in Headers */,
 				E71E620C11B550FD00EC5A05 /* mapper.h in Headers */,
@@ -3725,6 +3743,7 @@
 				E71E62BA11B550FD00EC5A05 /* vga_draw.cpp in Sources */,
 				E71E62BB11B550FD00EC5A05 /* vga_gfx.cpp in Sources */,
 				E71E62BC11B550FD00EC5A05 /* vga_memory.cpp in Sources */,
+				37992B2921D322BA00817702 /* saa1099.cpp in Sources */,
 				E71E62BD11B550FD00EC5A05 /* vga_misc.cpp in Sources */,
 				E71E62BE11B550FD00EC5A05 /* vga_other.cpp in Sources */,
 				E71E62BF11B550FD00EC5A05 /* vga_paradise.cpp in Sources */,
@@ -3759,6 +3778,7 @@
 				E71E62E411B550FD00EC5A05 /* shell_batch.cpp in Sources */,
 				E71E62E511B550FD00EC5A05 /* shell_cmds.cpp in Sources */,
 				E71E62E611B550FD00EC5A05 /* shell_misc.cpp in Sources */,
+				37992B2821D322BA00817702 /* sn76496.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
