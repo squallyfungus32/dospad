@@ -81,7 +81,11 @@ public:
 
 		// The default output device
 		desc.componentType = kAudioUnitType_Output;
+#ifdef IPHONEOS
+        desc.componentSubType = kAudioUnitSubType_RemoteIO;
+#else
 		desc.componentSubType = kAudioUnitSubType_DefaultOutput;
+#endif
 		desc.componentManufacturer = kAudioUnitManufacturer_Apple;
 		desc.componentFlags = 0;
 		desc.componentFlagsMask = 0;
@@ -93,7 +97,11 @@ public:
 
 		// The built-in default (softsynth) music device
 		desc.componentType = kAudioUnitType_MusicDevice;
+#ifdef IPHONEOS
+        desc.componentSubType = kAudioUnitSubType_MIDISynth;
+#else
 		desc.componentSubType = kAudioUnitSubType_DLSSynth;
+#endif
 		desc.componentManufacturer = kAudioUnitManufacturer_Apple;
 #if USE_DEPRECATED_COREAUDIO_API
 		RequireNoErr(AUGraphNewNode(m_auGraph, &desc, 0, NULL, &synthNode));

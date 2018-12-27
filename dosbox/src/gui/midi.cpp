@@ -77,12 +77,10 @@ MidiHandler Midi_none;
 
 /* Include different midi drivers, lowest ones get checked first for default */
 
-#if defined(MACOSX)
+#if defined(MACOSX) || (IPHONEOS)
 
 #include "midi_coremidi.h"
-#ifndef IPHONEOS
 #include "midi_coreaudio.h"
-#endif
 
 #elif defined (WIN32)
 
@@ -165,7 +163,14 @@ public:
 	MIDI(Section* configuration):Module_base(configuration){
 		Section_prop * section=static_cast<Section_prop *>(configuration);
 		const char * dev=section->Get_string("mididevice");
+#ifdef IPHONEOS
+        std::string config_path;
+        Cross::GetPlatformConfigDir(config_path);
+        config_path = config_path + section->Get_string("midiconfig");
+        const char * conf=config_path.c_str();
+#else
 		const char * conf=section->Get_string("midiconfig");
+#endif
 		/* If device = "default" go for first handler that works */
 		MidiHandler * handler;
 //		MAPPER_AddHandler(MIDI_SaveRawEvent,MK_f8,MMOD1|MMOD2,"caprawmidi","Cap MIDI");
