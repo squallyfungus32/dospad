@@ -71,7 +71,7 @@ public:
 		// Open the Music Device.
 		RequireNoErr(NewAUGraph(&m_auGraph));
 
-		AUNode outputNode, synthNode;
+        AUNode outputNode, synthNode;
 		// OS X 10.5 SDK doesn't know AudioComponentDescription desc;
 #if USE_DEPRECATED_COREAUDIO_API || (MAC_OS_X_VERSION_MAX_ALLOWED <= 1050)
 		ComponentDescription desc;
@@ -108,20 +108,18 @@ public:
 #else
 		RequireNoErr(AUGraphAddNode(m_auGraph, &desc, &synthNode));
 #endif
+        // Open the graph
+        RequireNoErr(AUGraphOpen(m_auGraph));
+        
+        // Get the music device from the graph.
+#if USE_DEPRECATED_COREAUDIO_API
+        RequireNoErr(AUGraphGetNodeInfo(m_auGraph, synthNode, NULL, NULL, NULL, &m_synth));
+#else
+        RequireNoErr(AUGraphNodeInfo(m_auGraph, synthNode, NULL, &m_synth));
+#endif
 
 		// Connect the softsynth to the default output
 		RequireNoErr(AUGraphConnectNodeInput(m_auGraph, synthNode, 0, outputNode, 0));
-
-		// Open and initialize the whole graph
-		RequireNoErr(AUGraphOpen(m_auGraph));
-		RequireNoErr(AUGraphInitialize(m_auGraph));
-
-		// Get the music device from the graph.
-#if USE_DEPRECATED_COREAUDIO_API
-		RequireNoErr(AUGraphGetNodeInfo(m_auGraph, synthNode, NULL, NULL, NULL, &m_synth));
-#else
-		RequireNoErr(AUGraphNodeInfo(m_auGraph, synthNode, NULL, &m_synth));
-#endif
 
 		// Optionally load a soundfont 
 		if (conf && conf[0]) {
@@ -168,6 +166,9 @@ public:
 					}
 				}
 		
+        // Initialize the whole graph
+        RequireNoErr(AUGraphInitialize(m_auGraph));
+        
 		// Finally: Start the graph!
 		RequireNoErr(AUGraphStart(m_auGraph));
 
@@ -181,6 +182,14 @@ public:
 		}
 		return false;
 	}
+    
+    void SetPreload(uint enabled)
+    {
+        AudioUnitSetProperty(
+                             m_synth, kAUMIDISynthProperty_EnablePreload,
+                             kAudioUnitScope_Global, 0, &enabled, sizeof(uint32_t)
+                             );
+    }
 
 	void Close(void) {
 		if (m_auGraph) {
@@ -191,7 +200,18 @@ public:
 	}
 
 	void PlayMsg(Bit8u * msg) {
-		MusicDeviceMIDIEvent(m_synth, msg[0], msg[1], msg[2], 0);
+#ifdef IPHONEOS
+        // We have to preload the instruments as they are added on iOS or they won't play
+        uint pc = msg[0]>>4;
+        if (pc == 0xC)
+        {
+            SetPreload(1);
+            MusicDeviceMIDIEvent(m_synth, msg[0], msg[1], 0, 0);
+            SetPreload(0);
+        }
+#endif
+        
+        MusicDeviceMIDIEvent(m_synth, msg[0], msg[1], msg[2], 0);
 	}	
 
 	void PlaySysex(Bit8u * sysex, Bitu len) {

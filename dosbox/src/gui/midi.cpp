@@ -164,10 +164,15 @@ public:
 		Section_prop * section=static_cast<Section_prop *>(configuration);
 		const char * dev=section->Get_string("mididevice");
 #ifdef IPHONEOS
+        std::string sf_path;
         std::string config_path;
+        sf_path = section->Get_string("midiconfig");
         Cross::GetPlatformConfigDir(config_path);
-        config_path = config_path + section->Get_string("midiconfig");
-        const char * conf=config_path.c_str();
+        if (sf_path != "")
+        {
+            sf_path = config_path + sf_path;
+        }
+        const char * conf=sf_path.c_str();
 #else
 		const char * conf=section->Get_string("midiconfig");
 #endif
