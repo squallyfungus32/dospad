@@ -273,8 +273,8 @@ int main(int argc, char *argv[]) {
 
         // Auto mount
 #ifndef IDOS // DOSPAD for CYDIA
-        strcpy(diskc, "/var/mobile/Documents");
-        strcpy(diskd, [[fso documentsDirectory] UTF8String]);
+        strcpy(diskc, [[fso documentsDirectory] UTF8String]);
+        //strcpy(diskd, [[fso documentsDirectory] UTF8String]);
 #else
         strcpy(diskc, [[fso documentsDirectory] UTF8String]);
         strcpy(diskd, "/var/mobile/Documents");
@@ -284,7 +284,7 @@ int main(int argc, char *argv[]) {
         NSString *dPath=[NSString stringWithUTF8String:diskd];
         
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        
+        /*
         // Copy files to C disk (documents)
         NSString *bundlePath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"diskc"];
         NSArray *items = [fso contentsOfDirectory:bundlePath];
@@ -297,7 +297,7 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
-        
+        */
         // Initalize command history
         dospad_init_history();
          
@@ -310,9 +310,9 @@ int main(int argc, char *argv[]) {
         }
 	
 #ifndef IDOS    
-        if ([fso ensureDirectoryExists:dPath]) {
-            strcat(automount_path, [dPath UTF8String]);
-        }
+        //if ([fso ensureDirectoryExists:dPath]) {
+        //    strcat(automount_path, [dPath UTF8String]);
+        //}
 #endif    
         int retVal = UIApplicationMain(argc, argv, @"DosPadUIApplication", nil);
         return retVal;

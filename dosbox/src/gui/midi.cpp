@@ -164,12 +164,11 @@ public:
 		Section_prop * section=static_cast<Section_prop *>(configuration);
 		const char * dev=section->Get_string("mididevice");
 #ifdef IPHONEOS
-        std::string sf_path;
-        std::string config_path;
+        std::string sf_path, config_path;
         sf_path = section->Get_string("midiconfig");
-        Cross::GetPlatformConfigDir(config_path);
-        if (sf_path != "")
-        {
+        /* If it isn't a MIDI channel specified, it's a soundfont so append the config dir */
+        if (sf_path.length() > 2) {
+            Cross::GetPlatformConfigDir(config_path);
             sf_path = config_path + sf_path;
         }
         const char * conf=sf_path.c_str();

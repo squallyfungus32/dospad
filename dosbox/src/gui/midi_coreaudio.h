@@ -58,7 +58,7 @@ class MidiHandler_coreaudio : public MidiHandler {
 private:
 	AUGraph m_auGraph;
 	AudioUnit m_synth;
-        const char *soundfont;
+    const char *soundfont;
 public:
 	MidiHandler_coreaudio() : m_auGraph(0), m_synth(0) {}
 	const char * GetName(void) { return "coreaudio"; }
@@ -183,11 +183,10 @@ public:
 		return false;
 	}
     
-    void SetPreload(uint enabled)
-    {
+    void SetPreload(uint enabled) {
         AudioUnitSetProperty(
                              m_synth, kAUMIDISynthProperty_EnablePreload,
-                             kAudioUnitScope_Global, 0, &enabled, sizeof(uint32_t)
+                             kAudioUnitScope_Global, 0, &enabled, sizeof(uint)
                              );
     }
 
@@ -201,10 +200,10 @@ public:
 
 	void PlayMsg(Bit8u * msg) {
 #ifdef IPHONEOS
-        // We have to preload the instruments as they are added on iOS or they won't play
+        /* We have to preload the instruments as they are added on iOS or they won't play */
         uint pc = msg[0]>>4;
-        if (pc == 0xC)
-        {
+        if (pc == 0xC ) {
+            //LOG_MSG("MIDI:PlayMsg: Command: Control Change, Channel: %u, Patch: %u", msg[0]&0xF0>>4, msg[1]);
             SetPreload(1);
             MusicDeviceMIDIEvent(m_synth, msg[0], msg[1], 0, 0);
             SetPreload(0);
