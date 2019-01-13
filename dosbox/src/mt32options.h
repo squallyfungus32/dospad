@@ -81,11 +81,19 @@ Pint->Set_help("MT-32 analogue output emulation mode\n"
 	"Oversampled = 3\n"
 	"Same as the default mode 2 but the output signal is 2x oversampled, i.e. the output sample rate is 96 kHz.\n"
 	"Even slower than all the other modes but better retains highest frequencies while further resampled in DOSBox mixer.");
+	
+Pint = secprop->Add_int("mt32.output.gain", Property::Changeable::WhenIdle, 100);
+Pint->SetMinMax(0,1000);
+Pint->Set_help("Output gain of MT-32 emulation in percent, 100 is the default value, the allowed maximum is 1000.");
 
 const char *mt32reverbModes[] = {"0", "1", "2", "3", "auto",0};
 Pstring = secprop->Add_string("mt32.reverb.mode",Property::Changeable::WhenIdle,"auto");
 Pstring->Set_values(mt32reverbModes);
 Pstring->Set_help("MT-32 reverb mode");
+
+Pint = secprop->Add_int("mt32.reverb.output.gain", Property::Changeable::WhenIdle, 100);
+Pint->SetMinMax(0,1000);
+Pint->Set_help("Reverb output gain of MT-32 emulation in percent, 100 is the default value, the allowed maximum is 1000.");
 
 const char *mt32reverbTimes[] = {"0", "1", "2", "3", "4", "5", "6", "7",0};
 Pint = secprop->Add_int("mt32.reverb.time",Property::Changeable::WhenIdle,5);

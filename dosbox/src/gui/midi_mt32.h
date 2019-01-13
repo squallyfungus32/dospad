@@ -2,7 +2,6 @@
 #define DOSBOX_MIDI_MT32_H
 
 #include "mixer.h"
-#include "SDL_thread.h"
 
 #define MT32EMU_API_TYPE 3
 #include <mt32emu.h>
@@ -13,7 +12,7 @@
 
 struct SDL_Thread;
 
-class MidiHandler_mt32: public MidiHandler {
+class MidiHandler_mt32 : public MidiHandler {
 public:
 	static MidiHandler_mt32 &GetInstance(void);
 

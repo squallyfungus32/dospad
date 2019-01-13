@@ -3,7 +3,7 @@
 #include "control.h"
 
 #ifndef DOSBOX_MIDI_H
-#include "midi.cpp"
+#include "midi.h"
 #endif
 
 #include "midi_mt32.h"
@@ -91,6 +91,8 @@ bool MidiHandler_mt32::Open(const char *conf) {
 		service->setReverbOverridden(true);
 	}
 
+	service->setOutputGain(0.01f * section->Get_int("mt32.output.gain"));
+	service->setReverbOutputGain(0.01f * section->Get_int("mt32.reverb.output.gain"));
 	service->setDACInputMode((MT32Emu::DACInputMode)section->Get_int("mt32.dac"));
 
 	service->setReversedStereoEnabled(section->Get_bool("mt32.reverse.stereo"));
@@ -160,7 +162,6 @@ void MidiHandler_mt32::PlayMsg(Bit8u *msg) {
 	} else {
 		service->playMsg(SDL_SwapLE32(*(Bit32u *)msg));
 	}
-    LOG_MSG("MT32: Play MIDI Message");
 }
 
 void MidiHandler_mt32::PlaySysex(Bit8u *sysex, Bitu len) {

@@ -138,6 +138,7 @@
 		37992B2921D322BA00817702 /* saa1099.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37992B2421D322BA00817702 /* saa1099.cpp */; };
 		37992B2A21D322BA00817702 /* sn76496.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2521D322BA00817702 /* sn76496.h */; };
 		37992B2B21D322BA00817702 /* saa1099.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2621D322BA00817702 /* saa1099.h */; };
+		37F3DC0821EBD5BD005E432B /* midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3DC0721EBD5BD005E432B /* midi.h */; };
 		9222DD4B1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
 		9222DD4C1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
 		9222DD4F1CC43B9200B321B9 /* KeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4E1CC43B9200B321B9 /* KeyMapper.m */; };
@@ -1090,6 +1091,7 @@
 		37992B2421D322BA00817702 /* saa1099.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = saa1099.cpp; sourceTree = "<group>"; };
 		37992B2521D322BA00817702 /* sn76496.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sn76496.h; sourceTree = "<group>"; };
 		37992B2621D322BA00817702 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saa1099.h; sourceTree = "<group>"; };
+		37F3DC0721EBD5BD005E432B /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		9222DD491CC43ADC00B321B9 /* MfiGameControllerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MfiGameControllerHandler.h; sourceTree = "<group>"; };
 		9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MfiGameControllerHandler.m; sourceTree = "<group>"; };
 		9222DD4D1CC43B9200B321B9 /* KeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyMapper.h; sourceTree = "<group>"; };
@@ -2118,6 +2120,7 @@
 		E71E60F411B550FD00EC5A05 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				37F3DC0721EBD5BD005E432B /* midi.h */,
 				E71E60F511B550FD00EC5A05 /* bios.h */,
 				E71E60F611B550FD00EC5A05 /* bios_disk.h */,
 				E71E60F711B550FD00EC5A05 /* callback.h */,
@@ -3264,6 +3267,7 @@
 				E71E623D11B550FD00EC5A05 /* save.h in Headers */,
 				3718FDB621EB09250099ED9B /* File.h in Headers */,
 				E71E623F11B550FD00EC5A05 /* support.h in Headers */,
+				37F3DC0821EBD5BD005E432B /* midi.h in Headers */,
 				E71E624111B550FD00EC5A05 /* helpers.h in Headers */,
 				E71E624211B550FD00EC5A05 /* prefix_0f.h in Headers */,
 				E71E624311B550FD00EC5A05 /* prefix_66.h in Headers */,
