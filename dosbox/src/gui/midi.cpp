@@ -77,6 +77,11 @@ MidiHandler Midi_none;
 
 /* Include different midi drivers, lowest ones get checked first for default */
 
+//#define DOSBOX_MIDI_H
+//#include "midi_mt32.h"
+//static MidiHandler_mt32 &Midi_mt32 = MidiHandler_mt32::GetInstance();
+//#undef DOSBOX_MIDI_H
+
 #if defined(MACOSX) || (IPHONEOS)
 
 #include "midi_coremidi.h"

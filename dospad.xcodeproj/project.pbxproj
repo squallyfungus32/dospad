@@ -56,6 +56,83 @@
 		2A4546F917D2809F00D18563 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2A9CD12CD99EC0091B859 /* CoreMIDI.framework */; };
 		2A4546FA17D2812100D18563 /* PianoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F3FE12DB4F0E00427836 /* PianoKeyboard.m */; };
 		2A4546FC17D2889700D18563 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4546FB17D2889700D18563 /* Default-568h@2x.png */; };
+		3718FD3321EAFB890099ED9B /* mt32options.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3221EAFB890099ED9B /* mt32options.h */; };
+		3718FD3621EAFBDC0099ED9B /* midi_mt32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */; };
+		3718FD3721EAFBDC0099ED9B /* midi_mt32.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3521EAFBDC0099ED9B /* midi_mt32.h */; };
+		3718FD8621EB09250099ED9B /* TVA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD3821EB09200099ED9B /* TVA.cpp */; };
+		3718FD8721EB09250099ED9B /* LA32FloatWaveGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD3921EB09200099ED9B /* LA32FloatWaveGenerator.cpp */; };
+		3718FD8821EB09250099ED9B /* mt32emu.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3A21EB09200099ED9B /* mt32emu.h */; };
+		3718FD8921EB09250099ED9B /* Enumerations.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3B21EB09200099ED9B /* Enumerations.h */; };
+		3718FD8A21EB09250099ED9B /* Structures.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3C21EB09200099ED9B /* Structures.h */; };
+		3718FD8B21EB09250099ED9B /* ROMInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3D21EB09200099ED9B /* ROMInfo.h */; };
+		3718FD8C21EB09250099ED9B /* BReverbModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3E21EB09200099ED9B /* BReverbModel.h */; };
+		3718FD8D21EB09250099ED9B /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD3F21EB09200099ED9B /* File.cpp */; };
+		3718FD8E21EB09250099ED9B /* MidiEventQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4021EB09200099ED9B /* MidiEventQueue.h */; };
+		3718FD8F21EB09250099ED9B /* Tables.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4121EB09210099ED9B /* Tables.h */; };
+		3718FD9021EB09250099ED9B /* Analog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4221EB09210099ED9B /* Analog.cpp */; };
+		3718FD9121EB09250099ED9B /* TVF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4321EB09210099ED9B /* TVF.cpp */; };
+		3718FD9221EB09250099ED9B /* SampleRateConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4421EB09210099ED9B /* SampleRateConverter.cpp */; };
+		3718FD9321EB09250099ED9B /* Partial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4521EB09210099ED9B /* Partial.cpp */; };
+		3718FD9421EB09250099ED9B /* LA32WaveGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4621EB09210099ED9B /* LA32WaveGenerator.cpp */; };
+		3718FD9521EB09250099ED9B /* Partial.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4721EB09210099ED9B /* Partial.h */; };
+		3718FD9621EB09250099ED9B /* c_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4921EB09210099ED9B /* c_interface.h */; };
+		3718FD9721EB09250099ED9B /* c_interface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4A21EB09210099ED9B /* c_interface.cpp */; };
+		3718FD9821EB09250099ED9B /* c_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4B21EB09210099ED9B /* c_types.h */; };
+		3718FD9921EB09250099ED9B /* cpp_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4C21EB09210099ED9B /* cpp_interface.h */; };
+		3718FD9A21EB09250099ED9B /* Synth.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4D21EB09210099ED9B /* Synth.h */; };
+		3718FD9B21EB09250099ED9B /* Poly.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD4E21EB09210099ED9B /* Poly.h */; };
+		3718FD9C21EB09250099ED9B /* Poly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD4F21EB09210099ED9B /* Poly.cpp */; };
+		3718FD9D21EB09250099ED9B /* Part.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD5021EB09220099ED9B /* Part.cpp */; };
+		3718FD9E21EB09250099ED9B /* MidiStreamParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD5121EB09220099ED9B /* MidiStreamParser.cpp */; };
+		3718FD9F21EB09250099ED9B /* MemoryRegion.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5221EB09220099ED9B /* MemoryRegion.h */; };
+		3718FDA021EB09250099ED9B /* LA32Ramp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD5321EB09220099ED9B /* LA32Ramp.cpp */; };
+		3718FDA121EB09250099ED9B /* SoxrAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD5521EB09220099ED9B /* SoxrAdapter.cpp */; };
+		3718FDA221EB09250099ED9B /* SamplerateAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5621EB09220099ED9B /* SamplerateAdapter.h */; };
+		3718FDA321EB09250099ED9B /* SamplerateAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD5721EB09220099ED9B /* SamplerateAdapter.cpp */; };
+		3718FDA421EB09250099ED9B /* SoxrAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5821EB09220099ED9B /* SoxrAdapter.h */; };
+		3718FDA521EB09250099ED9B /* IIR2xResampler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5B21EB09220099ED9B /* IIR2xResampler.h */; };
+		3718FDA621EB09250099ED9B /* FloatSampleProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5C21EB09220099ED9B /* FloatSampleProvider.h */; };
+		3718FDA721EB09250099ED9B /* SincResampler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5D21EB09220099ED9B /* SincResampler.h */; };
+		3718FDA821EB09250099ED9B /* ResamplerStage.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5E21EB09220099ED9B /* ResamplerStage.h */; };
+		3718FDA921EB09250099ED9B /* ResamplerModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD5F21EB09220099ED9B /* ResamplerModel.h */; };
+		3718FDAA21EB09250099ED9B /* FIRResampler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6021EB09220099ED9B /* FIRResampler.h */; };
+		3718FDAB21EB09250099ED9B /* LinearResampler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6121EB09220099ED9B /* LinearResampler.h */; };
+		3718FDAC21EB09250099ED9B /* IIR2xResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6321EB09220099ED9B /* IIR2xResampler.cpp */; };
+		3718FDAD21EB09250099ED9B /* SincResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6421EB09220099ED9B /* SincResampler.cpp */; };
+		3718FDAE21EB09250099ED9B /* LinearResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6521EB09220099ED9B /* LinearResampler.cpp */; };
+		3718FDAF21EB09250099ED9B /* ResamplerModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6621EB09220099ED9B /* ResamplerModel.cpp */; };
+		3718FDB021EB09250099ED9B /* FIRResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6721EB09220099ED9B /* FIRResampler.cpp */; };
+		3718FDB121EB09250099ED9B /* InternalResampler.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6821EB09220099ED9B /* InternalResampler.h */; };
+		3718FDB221EB09250099ED9B /* InternalResampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6921EB09220099ED9B /* InternalResampler.cpp */; };
+		3718FDB321EB09250099ED9B /* TVP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD6B21EB09220099ED9B /* TVP.cpp */; };
+		3718FDB421EB09250099ED9B /* PartialManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6C21EB09220099ED9B /* PartialManager.h */; };
+		3718FDB521EB09250099ED9B /* internals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6D21EB09220099ED9B /* internals.h */; };
+		3718FDB621EB09250099ED9B /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6E21EB09220099ED9B /* File.h */; };
+		3718FDB721EB09250099ED9B /* LA32FloatWaveGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6F21EB09230099ED9B /* LA32FloatWaveGenerator.h */; };
+		3718FDB821EB09250099ED9B /* TVP.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7021EB09230099ED9B /* TVP.h */; };
+		3718FDB921EB09250099ED9B /* Tables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD7121EB09230099ED9B /* Tables.cpp */; };
+		3718FDBA21EB09250099ED9B /* MidiStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7221EB09230099ED9B /* MidiStreamParser.h */; };
+		3718FDBB21EB09250099ED9B /* BReverbModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD7321EB09230099ED9B /* BReverbModel.cpp */; };
+		3718FDBC21EB09250099ED9B /* Synth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD7421EB09230099ED9B /* Synth.cpp */; };
+		3718FDBD21EB09250099ED9B /* Part.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7521EB09230099ED9B /* Part.h */; };
+		3718FDBE21EB09250099ED9B /* mmath.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7621EB09230099ED9B /* mmath.h */; };
+		3718FDBF21EB09250099ED9B /* SampleRateConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7721EB09230099ED9B /* SampleRateConverter.h */; };
+		3718FDC021EB09250099ED9B /* LA32Ramp.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7821EB09230099ED9B /* LA32Ramp.h */; };
+		3718FDC121EB09250099ED9B /* sha1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD7A21EB09230099ED9B /* sha1.cpp */; };
+		3718FDC221EB09250099ED9B /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7B21EB09230099ED9B /* sha1.h */; };
+		3718FDC321EB09250099ED9B /* LA32WaveGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7C21EB09240099ED9B /* LA32WaveGenerator.h */; };
+		3718FDC421EB09250099ED9B /* globals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7D21EB09240099ED9B /* globals.h */; };
+		3718FDC521EB09250099ED9B /* TVF.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7E21EB09240099ED9B /* TVF.h */; };
+		3718FDC621EB09250099ED9B /* FileStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD7F21EB09240099ED9B /* FileStream.h */; };
+		3718FDC721EB09250099ED9B /* PartialManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD8021EB09240099ED9B /* PartialManager.cpp */; };
+		3718FDC821EB09250099ED9B /* FileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD8121EB09240099ED9B /* FileStream.cpp */; };
+		3718FDC921EB09250099ED9B /* ROMInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD8221EB09240099ED9B /* ROMInfo.cpp */; };
+		3718FDCA21EB09250099ED9B /* Analog.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD8321EB09240099ED9B /* Analog.h */; };
+		3718FDCB21EB09250099ED9B /* TVA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD8421EB09240099ED9B /* TVA.h */; };
+		3718FDCC21EB09250099ED9B /* Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD8521EB09250099ED9B /* Types.h */; };
+		3718FDCE21EB0E910099ED9B /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD6A21EB09220099ED9B /* config.h */; };
+		3718FDD021EB1F700099ED9B /* soxr.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FDCF21EB1F700099ED9B /* soxr.h */; };
+		3718FDD221EB20E20099ED9B /* samplerate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FDD121EB20E20099ED9B /* samplerate.h */; };
 		37992B2721D322BA00817702 /* emu.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2221D322B900817702 /* emu.h */; };
 		37992B2821D322BA00817702 /* sn76496.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37992B2321D322B900817702 /* sn76496.cpp */; };
 		37992B2921D322BA00817702 /* saa1099.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37992B2421D322BA00817702 /* saa1099.cpp */; };
@@ -931,11 +1008,88 @@
 		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A4546FB17D2889700D18563 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		37992B2221D322B900817702 /* emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = emu.h; path = mame/emu.h; sourceTree = "<group>"; };
-		37992B2321D322B900817702 /* sn76496.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sn76496.cpp; path = mame/sn76496.cpp; sourceTree = "<group>"; };
-		37992B2421D322BA00817702 /* saa1099.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = saa1099.cpp; path = mame/saa1099.cpp; sourceTree = "<group>"; };
-		37992B2521D322BA00817702 /* sn76496.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sn76496.h; path = mame/sn76496.h; sourceTree = "<group>"; };
-		37992B2621D322BA00817702 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = saa1099.h; path = mame/saa1099.h; sourceTree = "<group>"; };
+		3718FD3221EAFB890099ED9B /* mt32options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt32options.h; sourceTree = "<group>"; };
+		3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi_mt32.cpp; sourceTree = "<group>"; };
+		3718FD3521EAFBDC0099ED9B /* midi_mt32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_mt32.h; sourceTree = "<group>"; };
+		3718FD3821EB09200099ED9B /* TVA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TVA.cpp; sourceTree = "<group>"; };
+		3718FD3921EB09200099ED9B /* LA32FloatWaveGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LA32FloatWaveGenerator.cpp; sourceTree = "<group>"; };
+		3718FD3A21EB09200099ED9B /* mt32emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt32emu.h; sourceTree = "<group>"; };
+		3718FD3B21EB09200099ED9B /* Enumerations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enumerations.h; sourceTree = "<group>"; };
+		3718FD3C21EB09200099ED9B /* Structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Structures.h; sourceTree = "<group>"; };
+		3718FD3D21EB09200099ED9B /* ROMInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ROMInfo.h; sourceTree = "<group>"; };
+		3718FD3E21EB09200099ED9B /* BReverbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BReverbModel.h; sourceTree = "<group>"; };
+		3718FD3F21EB09200099ED9B /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		3718FD4021EB09200099ED9B /* MidiEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiEventQueue.h; sourceTree = "<group>"; };
+		3718FD4121EB09210099ED9B /* Tables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tables.h; sourceTree = "<group>"; };
+		3718FD4221EB09210099ED9B /* Analog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Analog.cpp; sourceTree = "<group>"; };
+		3718FD4321EB09210099ED9B /* TVF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TVF.cpp; sourceTree = "<group>"; };
+		3718FD4421EB09210099ED9B /* SampleRateConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleRateConverter.cpp; sourceTree = "<group>"; };
+		3718FD4521EB09210099ED9B /* Partial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Partial.cpp; sourceTree = "<group>"; };
+		3718FD4621EB09210099ED9B /* LA32WaveGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LA32WaveGenerator.cpp; sourceTree = "<group>"; };
+		3718FD4721EB09210099ED9B /* Partial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Partial.h; sourceTree = "<group>"; };
+		3718FD4921EB09210099ED9B /* c_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_interface.h; sourceTree = "<group>"; };
+		3718FD4A21EB09210099ED9B /* c_interface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = c_interface.cpp; sourceTree = "<group>"; };
+		3718FD4B21EB09210099ED9B /* c_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_types.h; sourceTree = "<group>"; };
+		3718FD4C21EB09210099ED9B /* cpp_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpp_interface.h; sourceTree = "<group>"; };
+		3718FD4D21EB09210099ED9B /* Synth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Synth.h; sourceTree = "<group>"; };
+		3718FD4E21EB09210099ED9B /* Poly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Poly.h; sourceTree = "<group>"; };
+		3718FD4F21EB09210099ED9B /* Poly.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Poly.cpp; sourceTree = "<group>"; };
+		3718FD5021EB09220099ED9B /* Part.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Part.cpp; sourceTree = "<group>"; };
+		3718FD5121EB09220099ED9B /* MidiStreamParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiStreamParser.cpp; sourceTree = "<group>"; };
+		3718FD5221EB09220099ED9B /* MemoryRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryRegion.h; sourceTree = "<group>"; };
+		3718FD5321EB09220099ED9B /* LA32Ramp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LA32Ramp.cpp; sourceTree = "<group>"; };
+		3718FD5521EB09220099ED9B /* SoxrAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoxrAdapter.cpp; sourceTree = "<group>"; };
+		3718FD5621EB09220099ED9B /* SamplerateAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplerateAdapter.h; sourceTree = "<group>"; };
+		3718FD5721EB09220099ED9B /* SamplerateAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SamplerateAdapter.cpp; sourceTree = "<group>"; };
+		3718FD5821EB09220099ED9B /* SoxrAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoxrAdapter.h; sourceTree = "<group>"; };
+		3718FD5B21EB09220099ED9B /* IIR2xResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIR2xResampler.h; sourceTree = "<group>"; };
+		3718FD5C21EB09220099ED9B /* FloatSampleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatSampleProvider.h; sourceTree = "<group>"; };
+		3718FD5D21EB09220099ED9B /* SincResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SincResampler.h; sourceTree = "<group>"; };
+		3718FD5E21EB09220099ED9B /* ResamplerStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResamplerStage.h; sourceTree = "<group>"; };
+		3718FD5F21EB09220099ED9B /* ResamplerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResamplerModel.h; sourceTree = "<group>"; };
+		3718FD6021EB09220099ED9B /* FIRResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIRResampler.h; sourceTree = "<group>"; };
+		3718FD6121EB09220099ED9B /* LinearResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearResampler.h; sourceTree = "<group>"; };
+		3718FD6321EB09220099ED9B /* IIR2xResampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IIR2xResampler.cpp; sourceTree = "<group>"; };
+		3718FD6421EB09220099ED9B /* SincResampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SincResampler.cpp; sourceTree = "<group>"; };
+		3718FD6521EB09220099ED9B /* LinearResampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearResampler.cpp; sourceTree = "<group>"; };
+		3718FD6621EB09220099ED9B /* ResamplerModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResamplerModel.cpp; sourceTree = "<group>"; };
+		3718FD6721EB09220099ED9B /* FIRResampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIRResampler.cpp; sourceTree = "<group>"; };
+		3718FD6821EB09220099ED9B /* InternalResampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternalResampler.h; sourceTree = "<group>"; };
+		3718FD6921EB09220099ED9B /* InternalResampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InternalResampler.cpp; sourceTree = "<group>"; };
+		3718FD6A21EB09220099ED9B /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		3718FD6B21EB09220099ED9B /* TVP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TVP.cpp; sourceTree = "<group>"; };
+		3718FD6C21EB09220099ED9B /* PartialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartialManager.h; sourceTree = "<group>"; };
+		3718FD6D21EB09220099ED9B /* internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internals.h; sourceTree = "<group>"; };
+		3718FD6E21EB09220099ED9B /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		3718FD6F21EB09230099ED9B /* LA32FloatWaveGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LA32FloatWaveGenerator.h; sourceTree = "<group>"; };
+		3718FD7021EB09230099ED9B /* TVP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVP.h; sourceTree = "<group>"; };
+		3718FD7121EB09230099ED9B /* Tables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tables.cpp; sourceTree = "<group>"; };
+		3718FD7221EB09230099ED9B /* MidiStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiStreamParser.h; sourceTree = "<group>"; };
+		3718FD7321EB09230099ED9B /* BReverbModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BReverbModel.cpp; sourceTree = "<group>"; };
+		3718FD7421EB09230099ED9B /* Synth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Synth.cpp; sourceTree = "<group>"; };
+		3718FD7521EB09230099ED9B /* Part.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part.h; sourceTree = "<group>"; };
+		3718FD7621EB09230099ED9B /* mmath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmath.h; sourceTree = "<group>"; };
+		3718FD7721EB09230099ED9B /* SampleRateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleRateConverter.h; sourceTree = "<group>"; };
+		3718FD7821EB09230099ED9B /* LA32Ramp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LA32Ramp.h; sourceTree = "<group>"; };
+		3718FD7A21EB09230099ED9B /* sha1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sha1.cpp; sourceTree = "<group>"; };
+		3718FD7B21EB09230099ED9B /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		3718FD7C21EB09240099ED9B /* LA32WaveGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LA32WaveGenerator.h; sourceTree = "<group>"; };
+		3718FD7D21EB09240099ED9B /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		3718FD7E21EB09240099ED9B /* TVF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVF.h; sourceTree = "<group>"; };
+		3718FD7F21EB09240099ED9B /* FileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileStream.h; sourceTree = "<group>"; };
+		3718FD8021EB09240099ED9B /* PartialManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartialManager.cpp; sourceTree = "<group>"; };
+		3718FD8121EB09240099ED9B /* FileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileStream.cpp; sourceTree = "<group>"; };
+		3718FD8221EB09240099ED9B /* ROMInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ROMInfo.cpp; sourceTree = "<group>"; };
+		3718FD8321EB09240099ED9B /* Analog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analog.h; sourceTree = "<group>"; };
+		3718FD8421EB09240099ED9B /* TVA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVA.h; sourceTree = "<group>"; };
+		3718FD8521EB09250099ED9B /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		3718FDCF21EB1F700099ED9B /* soxr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soxr.h; sourceTree = "<group>"; };
+		3718FDD121EB20E20099ED9B /* samplerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = samplerate.h; sourceTree = "<group>"; };
+		37992B2221D322B900817702 /* emu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emu.h; sourceTree = "<group>"; };
+		37992B2321D322B900817702 /* sn76496.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sn76496.cpp; sourceTree = "<group>"; };
+		37992B2421D322BA00817702 /* saa1099.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = saa1099.cpp; sourceTree = "<group>"; };
+		37992B2521D322BA00817702 /* sn76496.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sn76496.h; sourceTree = "<group>"; };
+		37992B2621D322BA00817702 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saa1099.h; sourceTree = "<group>"; };
 		9222DD491CC43ADC00B321B9 /* MfiGameControllerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MfiGameControllerHandler.h; sourceTree = "<group>"; };
 		9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MfiGameControllerHandler.m; sourceTree = "<group>"; };
 		9222DD4D1CC43B9200B321B9 /* KeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyMapper.h; sourceTree = "<group>"; };
@@ -1731,6 +1885,147 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3718FD4821EB09210099ED9B /* c_interface */ = {
+			isa = PBXGroup;
+			children = (
+				3718FD4921EB09210099ED9B /* c_interface.h */,
+				3718FD4A21EB09210099ED9B /* c_interface.cpp */,
+				3718FD4B21EB09210099ED9B /* c_types.h */,
+				3718FD4C21EB09210099ED9B /* cpp_interface.h */,
+			);
+			path = c_interface;
+			sourceTree = "<group>";
+		};
+		3718FD5421EB09220099ED9B /* srchelper */ = {
+			isa = PBXGroup;
+			children = (
+				3718FDD121EB20E20099ED9B /* samplerate.h */,
+				3718FDCF21EB1F700099ED9B /* soxr.h */,
+				3718FD5521EB09220099ED9B /* SoxrAdapter.cpp */,
+				3718FD5621EB09220099ED9B /* SamplerateAdapter.h */,
+				3718FD5721EB09220099ED9B /* SamplerateAdapter.cpp */,
+				3718FD5821EB09220099ED9B /* SoxrAdapter.h */,
+				3718FD5921EB09220099ED9B /* srctools */,
+				3718FD6821EB09220099ED9B /* InternalResampler.h */,
+				3718FD6921EB09220099ED9B /* InternalResampler.cpp */,
+			);
+			path = srchelper;
+			sourceTree = "<group>";
+		};
+		3718FD5921EB09220099ED9B /* srctools */ = {
+			isa = PBXGroup;
+			children = (
+				3718FD5A21EB09220099ED9B /* include */,
+				3718FD6221EB09220099ED9B /* src */,
+			);
+			path = srctools;
+			sourceTree = "<group>";
+		};
+		3718FD5A21EB09220099ED9B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3718FD5B21EB09220099ED9B /* IIR2xResampler.h */,
+				3718FD5C21EB09220099ED9B /* FloatSampleProvider.h */,
+				3718FD5D21EB09220099ED9B /* SincResampler.h */,
+				3718FD5E21EB09220099ED9B /* ResamplerStage.h */,
+				3718FD5F21EB09220099ED9B /* ResamplerModel.h */,
+				3718FD6021EB09220099ED9B /* FIRResampler.h */,
+				3718FD6121EB09220099ED9B /* LinearResampler.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		3718FD6221EB09220099ED9B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3718FD6321EB09220099ED9B /* IIR2xResampler.cpp */,
+				3718FD6421EB09220099ED9B /* SincResampler.cpp */,
+				3718FD6521EB09220099ED9B /* LinearResampler.cpp */,
+				3718FD6621EB09220099ED9B /* ResamplerModel.cpp */,
+				3718FD6721EB09220099ED9B /* FIRResampler.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		3718FD7921EB09230099ED9B /* sha1 */ = {
+			isa = PBXGroup;
+			children = (
+				3718FD7A21EB09230099ED9B /* sha1.cpp */,
+				3718FD7B21EB09230099ED9B /* sha1.h */,
+			);
+			path = sha1;
+			sourceTree = "<group>";
+		};
+		3718FDCD21EB09B90099ED9B /* mt32emu */ = {
+			isa = PBXGroup;
+			children = (
+				3718FD4221EB09210099ED9B /* Analog.cpp */,
+				3718FD8321EB09240099ED9B /* Analog.h */,
+				3718FD7321EB09230099ED9B /* BReverbModel.cpp */,
+				3718FD3E21EB09200099ED9B /* BReverbModel.h */,
+				3718FD4821EB09210099ED9B /* c_interface */,
+				3718FD6A21EB09220099ED9B /* config.h */,
+				3718FD3B21EB09200099ED9B /* Enumerations.h */,
+				3718FD3F21EB09200099ED9B /* File.cpp */,
+				3718FD6E21EB09220099ED9B /* File.h */,
+				3718FD8121EB09240099ED9B /* FileStream.cpp */,
+				3718FD7F21EB09240099ED9B /* FileStream.h */,
+				3718FD7D21EB09240099ED9B /* globals.h */,
+				3718FD6D21EB09220099ED9B /* internals.h */,
+				3718FD3921EB09200099ED9B /* LA32FloatWaveGenerator.cpp */,
+				3718FD6F21EB09230099ED9B /* LA32FloatWaveGenerator.h */,
+				3718FD5321EB09220099ED9B /* LA32Ramp.cpp */,
+				3718FD7821EB09230099ED9B /* LA32Ramp.h */,
+				3718FD4621EB09210099ED9B /* LA32WaveGenerator.cpp */,
+				3718FD7C21EB09240099ED9B /* LA32WaveGenerator.h */,
+				3718FD5221EB09220099ED9B /* MemoryRegion.h */,
+				3718FD4021EB09200099ED9B /* MidiEventQueue.h */,
+				3718FD5121EB09220099ED9B /* MidiStreamParser.cpp */,
+				3718FD7221EB09230099ED9B /* MidiStreamParser.h */,
+				3718FD7621EB09230099ED9B /* mmath.h */,
+				3718FD3A21EB09200099ED9B /* mt32emu.h */,
+				3718FD5021EB09220099ED9B /* Part.cpp */,
+				3718FD7521EB09230099ED9B /* Part.h */,
+				3718FD4521EB09210099ED9B /* Partial.cpp */,
+				3718FD4721EB09210099ED9B /* Partial.h */,
+				3718FD8021EB09240099ED9B /* PartialManager.cpp */,
+				3718FD6C21EB09220099ED9B /* PartialManager.h */,
+				3718FD4F21EB09210099ED9B /* Poly.cpp */,
+				3718FD4E21EB09210099ED9B /* Poly.h */,
+				3718FD8221EB09240099ED9B /* ROMInfo.cpp */,
+				3718FD3D21EB09200099ED9B /* ROMInfo.h */,
+				3718FD4421EB09210099ED9B /* SampleRateConverter.cpp */,
+				3718FD7721EB09230099ED9B /* SampleRateConverter.h */,
+				3718FD7921EB09230099ED9B /* sha1 */,
+				3718FD5421EB09220099ED9B /* srchelper */,
+				3718FD3C21EB09200099ED9B /* Structures.h */,
+				3718FD7421EB09230099ED9B /* Synth.cpp */,
+				3718FD4D21EB09210099ED9B /* Synth.h */,
+				3718FD7121EB09230099ED9B /* Tables.cpp */,
+				3718FD4121EB09210099ED9B /* Tables.h */,
+				3718FD3821EB09200099ED9B /* TVA.cpp */,
+				3718FD8421EB09240099ED9B /* TVA.h */,
+				3718FD4321EB09210099ED9B /* TVF.cpp */,
+				3718FD7E21EB09240099ED9B /* TVF.h */,
+				3718FD6B21EB09220099ED9B /* TVP.cpp */,
+				3718FD7021EB09230099ED9B /* TVP.h */,
+				3718FD8521EB09250099ED9B /* Types.h */,
+			);
+			path = mt32emu;
+			sourceTree = "<group>";
+		};
+		37EF762321EBBE5700CD1688 /* mame */ = {
+			isa = PBXGroup;
+			children = (
+				37992B2221D322B900817702 /* emu.h */,
+				37992B2421D322BA00817702 /* saa1099.cpp */,
+				37992B2621D322BA00817702 /* saa1099.h */,
+				37992B2321D322B900817702 /* sn76496.cpp */,
+				37992B2521D322BA00817702 /* sn76496.h */,
+			);
+			path = mame;
+			sourceTree = "<group>";
+		};
 		E7107146129A8E5A00B21291 /* floatpanel-res */ = {
 			isa = PBXGroup;
 			children = (
@@ -1866,6 +2161,7 @@
 		E71E611A11B550FD00EC5A05 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				3718FD3221EAFB890099ED9B /* mt32options.h */,
 				E71E611B11B550FD00EC5A05 /* cpu */,
 				E71E615611B550FD00EC5A05 /* dos */,
 				E71E617711B550FD00EC5A05 /* dosbox.cpp */,
@@ -2020,6 +2316,8 @@
 		E71E617D11B550FD00EC5A05 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */,
+				3718FD3521EAFBDC0099ED9B /* midi_mt32.h */,
 				E71E617E11B550FD00EC5A05 /* dosbox_logo.h */,
 				E71E617F11B550FD00EC5A05 /* dosbox_splash.h */,
 				E71E618111B550FD00EC5A05 /* midi.cpp */,
@@ -2048,11 +2346,8 @@
 		E71E619411B550FD00EC5A05 /* hardware */ = {
 			isa = PBXGroup;
 			children = (
-				37992B2221D322B900817702 /* emu.h */,
-				37992B2421D322BA00817702 /* saa1099.cpp */,
-				37992B2621D322BA00817702 /* saa1099.h */,
-				37992B2321D322B900817702 /* sn76496.cpp */,
-				37992B2521D322BA00817702 /* sn76496.h */,
+				3718FDCD21EB09B90099ED9B /* mt32emu */,
+				37EF762321EBBE5700CD1688 /* mame */,
 				E71E619511B550FD00EC5A05 /* adlib.cpp */,
 				E71E619611B550FD00EC5A05 /* adlib.h */,
 				E71E619711B550FD00EC5A05 /* cmos.cpp */,
@@ -2870,45 +3165,68 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3718FDB821EB09250099ED9B /* TVP.h in Headers */,
 				E71E61F811B550FD00EC5A05 /* config.h in Headers */,
+				3718FDC021EB09250099ED9B /* LA32Ramp.h in Headers */,
 				E71E61F911B550FD00EC5A05 /* bios.h in Headers */,
 				E71E61FA11B550FD00EC5A05 /* bios_disk.h in Headers */,
+				3718FDBF21EB09250099ED9B /* SampleRateConverter.h in Headers */,
 				E71E61FB11B550FD00EC5A05 /* callback.h in Headers */,
+				3718FD9B21EB09250099ED9B /* Poly.h in Headers */,
 				E71E61FC11B550FD00EC5A05 /* control.h in Headers */,
 				E71E61FD11B550FD00EC5A05 /* cpu.h in Headers */,
 				E71E61FE11B550FD00EC5A05 /* cross.h in Headers */,
 				37992B2A21D322BA00817702 /* sn76496.h in Headers */,
 				E71E61FF11B550FD00EC5A05 /* debug.h in Headers */,
 				E71E620011B550FD00EC5A05 /* dma.h in Headers */,
+				3718FDA221EB09250099ED9B /* SamplerateAdapter.h in Headers */,
+				3718FDAA21EB09250099ED9B /* FIRResampler.h in Headers */,
+				3718FDA721EB09250099ED9B /* SincResampler.h in Headers */,
 				E71E620111B550FD00EC5A05 /* dos_inc.h in Headers */,
 				E71E620211B550FD00EC5A05 /* dos_system.h in Headers */,
 				E71E620311B550FD00EC5A05 /* dosbox.h in Headers */,
 				E71E620411B550FD00EC5A05 /* fpu.h in Headers */,
+				3718FDB421EB09250099ED9B /* PartialManager.h in Headers */,
+				3718FDC221EB09250099ED9B /* sha1.h in Headers */,
 				E71E620511B550FD00EC5A05 /* hardware.h in Headers */,
 				E71E620611B550FD00EC5A05 /* inout.h in Headers */,
 				E71E620711B550FD00EC5A05 /* ipx.h in Headers */,
+				3718FDB721EB09250099ED9B /* LA32FloatWaveGenerator.h in Headers */,
+				3718FDCE21EB0E910099ED9B /* config.h in Headers */,
 				E71E620811B550FD00EC5A05 /* ipxserver.h in Headers */,
 				E71E620911B550FD00EC5A05 /* joystick.h in Headers */,
 				37992B2B21D322BA00817702 /* saa1099.h in Headers */,
 				37992B2721D322BA00817702 /* emu.h in Headers */,
+				3718FDC421EB09250099ED9B /* globals.h in Headers */,
 				E71E620A11B550FD00EC5A05 /* keyboard.h in Headers */,
+				3718FD9821EB09250099ED9B /* c_types.h in Headers */,
+				3718FD8921EB09250099ED9B /* Enumerations.h in Headers */,
 				E71E620B11B550FD00EC5A05 /* logging.h in Headers */,
 				E71E620C11B550FD00EC5A05 /* mapper.h in Headers */,
 				E71E620D11B550FD00EC5A05 /* mem.h in Headers */,
 				E71E620E11B550FD00EC5A05 /* mixer.h in Headers */,
 				E71E620F11B550FD00EC5A05 /* modules.h in Headers */,
+				3718FDA521EB09250099ED9B /* IIR2xResampler.h in Headers */,
 				E71E621011B550FD00EC5A05 /* mouse.h in Headers */,
 				E71E621111B550FD00EC5A05 /* paging.h in Headers */,
+				3718FDAB21EB09250099ED9B /* LinearResampler.h in Headers */,
+				3718FDC321EB09250099ED9B /* LA32WaveGenerator.h in Headers */,
+				3718FD9921EB09250099ED9B /* cpp_interface.h in Headers */,
 				E71E621211B550FD00EC5A05 /* pic.h in Headers */,
+				3718FDC621EB09250099ED9B /* FileStream.h in Headers */,
 				E71E621311B550FD00EC5A05 /* programs.h in Headers */,
 				E71E621411B550FD00EC5A05 /* regs.h in Headers */,
 				E71E621511B550FD00EC5A05 /* render.h in Headers */,
 				E71E621611B550FD00EC5A05 /* serialport.h in Headers */,
 				E71E621711B550FD00EC5A05 /* setup.h in Headers */,
 				E71E621811B550FD00EC5A05 /* shell.h in Headers */,
+				3718FDA921EB09250099ED9B /* ResamplerModel.h in Headers */,
 				E71E621911B550FD00EC5A05 /* support.h in Headers */,
 				E71E621A11B550FD00EC5A05 /* timer.h in Headers */,
+				3718FDB521EB09250099ED9B /* internals.h in Headers */,
 				E71E621B11B550FD00EC5A05 /* vga.h in Headers */,
+				3718FDD021EB1F700099ED9B /* soxr.h in Headers */,
+				3718FD9621EB09250099ED9B /* c_interface.h in Headers */,
 				E71E621C11B550FD00EC5A05 /* video.h in Headers */,
 				E71E621F11B550FD00EC5A05 /* cache.h in Headers */,
 				E71E622011B550FD00EC5A05 /* decoder.h in Headers */,
@@ -2917,14 +3235,18 @@
 				E71E622311B550FD00EC5A05 /* helpers.h in Headers */,
 				E71E622411B550FD00EC5A05 /* risc_x86.h in Headers */,
 				E71E622711B550FD00EC5A05 /* cache.h in Headers */,
+				3718FD9521EB09250099ED9B /* Partial.h in Headers */,
 				E71E622811B550FD00EC5A05 /* decoder.h in Headers */,
 				E71E622911B550FD00EC5A05 /* decoder_basic.h in Headers */,
 				E71E622A11B550FD00EC5A05 /* decoder_opcodes.h in Headers */,
 				E71E622B11B550FD00EC5A05 /* dyn_fpu.h in Headers */,
 				E71E622C11B550FD00EC5A05 /* operators.h in Headers */,
 				E71E622D11B550FD00EC5A05 /* risc_armv4le-common.h in Headers */,
+				3718FDB121EB09250099ED9B /* InternalResampler.h in Headers */,
+				3718FDC521EB09250099ED9B /* TVF.h in Headers */,
 				E71E622E11B550FD00EC5A05 /* risc_armv4le-o3.h in Headers */,
 				E71E622F11B550FD00EC5A05 /* risc_armv4le-s3.h in Headers */,
+				3718FD8C21EB09250099ED9B /* BReverbModel.h in Headers */,
 				E71E623011B550FD00EC5A05 /* risc_armv4le-thumb-iw.h in Headers */,
 				E71E623111B550FD00EC5A05 /* risc_armv4le-thumb-niw.h in Headers */,
 				E71E623211B550FD00EC5A05 /* risc_armv4le-thumb.h in Headers */,
@@ -2932,18 +3254,22 @@
 				E71E623411B550FD00EC5A05 /* risc_mipsel32.h in Headers */,
 				E71E623511B550FD00EC5A05 /* risc_x64.h in Headers */,
 				E71E623611B550FD00EC5A05 /* risc_x86.h in Headers */,
+				3718FDCB21EB09250099ED9B /* TVA.h in Headers */,
 				E71E623811B550FD00EC5A05 /* ea_lookup.h in Headers */,
 				E71E623911B550FD00EC5A05 /* load.h in Headers */,
 				E71E623A11B550FD00EC5A05 /* loadwrite.h in Headers */,
 				E71E623B11B550FD00EC5A05 /* op.h in Headers */,
+				3718FD8E21EB09250099ED9B /* MidiEventQueue.h in Headers */,
 				E71E623C11B550FD00EC5A05 /* optable.h in Headers */,
 				E71E623D11B550FD00EC5A05 /* save.h in Headers */,
+				3718FDB621EB09250099ED9B /* File.h in Headers */,
 				E71E623F11B550FD00EC5A05 /* support.h in Headers */,
 				E71E624111B550FD00EC5A05 /* helpers.h in Headers */,
 				E71E624211B550FD00EC5A05 /* prefix_0f.h in Headers */,
 				E71E624311B550FD00EC5A05 /* prefix_66.h in Headers */,
 				E71E624411B550FD00EC5A05 /* prefix_66_0f.h in Headers */,
 				E71E624511B550FD00EC5A05 /* prefix_none.h in Headers */,
+				3718FD8F21EB09250099ED9B /* Tables.h in Headers */,
 				E71E624711B550FD00EC5A05 /* support.h in Headers */,
 				E71E624811B550FD00EC5A05 /* table_ea.h in Headers */,
 				E71E624E11B550FD00EC5A05 /* instructions.h in Headers */,
@@ -2953,19 +3279,28 @@
 				E71E625B11B550FD00EC5A05 /* dev_con.h in Headers */,
 				E71E625E11B550FD00EC5A05 /* dos_codepages.h in Headers */,
 				E71E626411B550FD00EC5A05 /* dos_keyboard_layout_data.h in Headers */,
+				3718FDA621EB09250099ED9B /* FloatSampleProvider.h in Headers */,
+				3718FD3321EAFB890099ED9B /* mt32options.h in Headers */,
 				E71E627011B550FD00EC5A05 /* drives.h in Headers */,
 				E71E627211B550FD00EC5A05 /* scsidefs.h in Headers */,
 				E71E627311B550FD00EC5A05 /* wnaspi32.h in Headers */,
+				3718FD3721EAFBDC0099ED9B /* midi_mt32.h in Headers */,
 				E71E627611B550FD00EC5A05 /* fpu_instructions.h in Headers */,
 				E71E627711B550FD00EC5A05 /* fpu_instructions_x86.h in Headers */,
+				3718FDA421EB09250099ED9B /* SoxrAdapter.h in Headers */,
 				E71E627911B550FD00EC5A05 /* dosbox_logo.h in Headers */,
+				3718FDBE21EB09250099ED9B /* mmath.h in Headers */,
 				E71E627A11B550FD00EC5A05 /* dosbox_splash.h in Headers */,
+				3718FD8B21EB09250099ED9B /* ROMInfo.h in Headers */,
 				E71E627D11B550FD00EC5A05 /* midi_alsa.h in Headers */,
 				E71E627E11B550FD00EC5A05 /* midi_coreaudio.h in Headers */,
 				E71E627F11B550FD00EC5A05 /* midi_coremidi.h in Headers */,
 				E71E628011B550FD00EC5A05 /* midi_oss.h in Headers */,
+				3718FD8821EB09250099ED9B /* mt32emu.h in Headers */,
 				E71E628111B550FD00EC5A05 /* midi_win32.h in Headers */,
+				3718FDCA21EB09250099ED9B /* Analog.h in Headers */,
 				E71E628311B550FD00EC5A05 /* render_loops.h in Headers */,
+				3718FD8A21EB09250099ED9B /* Structures.h in Headers */,
 				E71E628511B550FD00EC5A05 /* render_scalers.h in Headers */,
 				E71E628611B550FD00EC5A05 /* render_simple.h in Headers */,
 				E71E628711B550FD00EC5A05 /* render_templates.h in Headers */,
@@ -2977,13 +3312,20 @@
 				E71E629311B550FD00EC5A05 /* dbopl.h in Headers */,
 				E71E62A311B550FD00EC5A05 /* opl.h in Headers */,
 				E71E62A811B550FD00EC5A05 /* directserial.h in Headers */,
+				3718FDBD21EB09250099ED9B /* Part.h in Headers */,
+				3718FDD221EB20E20099ED9B /* samplerate.h in Headers */,
+				3718FDCC21EB09250099ED9B /* Types.h in Headers */,
 				E71E62AA11B550FD00EC5A05 /* libserial.h in Headers */,
+				3718FDBA21EB09250099ED9B /* MidiStreamParser.h in Headers */,
+				3718FD9A21EB09250099ED9B /* Synth.h in Headers */,
 				E71E62AC11B550FD00EC5A05 /* misc_util.h in Headers */,
 				E71E62AE11B550FD00EC5A05 /* nullmodem.h in Headers */,
 				E71E62B011B550FD00EC5A05 /* serialdummy.h in Headers */,
 				E71E62B311B550FD00EC5A05 /* softmodem.h in Headers */,
 				E71E62C911B550FD00EC5A05 /* int10.h in Headers */,
 				E71E62D611B550FD00EC5A05 /* xms.h in Headers */,
+				3718FD9F21EB09250099ED9B /* MemoryRegion.h in Headers */,
+				3718FDA821EB09250099ED9B /* ResamplerStage.h in Headers */,
 				E71E62D811B550FD00EC5A05 /* gui_tk.h in Headers */,
 				E71E62DB11B550FD00EC5A05 /* zmbv.h in Headers */,
 			);
@@ -3666,6 +4008,7 @@
 			files = (
 				E71E621E11B550FD00EC5A05 /* callback.cpp in Sources */,
 				E71E622611B550FD00EC5A05 /* core_dyn_x86.cpp in Sources */,
+				3718FDAF21EB09250099ED9B /* ResamplerModel.cpp in Sources */,
 				E71E623711B550FD00EC5A05 /* core_dynrec.cpp in Sources */,
 				E71E624011B550FD00EC5A05 /* core_full.cpp in Sources */,
 				E71E624911B550FD00EC5A05 /* core_normal.cpp in Sources */,
@@ -3673,6 +4016,7 @@
 				E71E624B11B550FD00EC5A05 /* core_simple.cpp in Sources */,
 				E71E624C11B550FD00EC5A05 /* cpu.cpp in Sources */,
 				E71E624D11B550FD00EC5A05 /* flags.cpp in Sources */,
+				3718FD9C21EB09250099ED9B /* Poly.cpp in Sources */,
 				E71E625111B550FD00EC5A05 /* modrm.cpp in Sources */,
 				E71E625311B550FD00EC5A05 /* paging.cpp in Sources */,
 				E71E625411B550FD00EC5A05 /* cdrom.cpp in Sources */,
@@ -3692,23 +4036,32 @@
 				E71E626611B550FD00EC5A05 /* dos_misc.cpp in Sources */,
 				E71E626711B550FD00EC5A05 /* dos_mscdex.cpp in Sources */,
 				E71E626811B550FD00EC5A05 /* dos_programs.cpp in Sources */,
+				3718FDB321EB09250099ED9B /* TVP.cpp in Sources */,
 				E71E626911B550FD00EC5A05 /* dos_tables.cpp in Sources */,
+				3718FDAE21EB09250099ED9B /* LinearResampler.cpp in Sources */,
 				E71E626A11B550FD00EC5A05 /* drive_cache.cpp in Sources */,
+				3718FDC121EB09250099ED9B /* sha1.cpp in Sources */,
+				3718FDBB21EB09250099ED9B /* BReverbModel.cpp in Sources */,
 				E71E626B11B550FD00EC5A05 /* drive_fat.cpp in Sources */,
+				3718FDAC21EB09250099ED9B /* IIR2xResampler.cpp in Sources */,
 				E71E626C11B550FD00EC5A05 /* drive_iso.cpp in Sources */,
 				E71E626D11B550FD00EC5A05 /* drive_local.cpp in Sources */,
 				E71E626E11B550FD00EC5A05 /* drive_virtual.cpp in Sources */,
+				3718FDB921EB09250099ED9B /* Tables.cpp in Sources */,
 				E71E626F11B550FD00EC5A05 /* drives.cpp in Sources */,
+				3718FDA021EB09250099ED9B /* LA32Ramp.cpp in Sources */,
 				E71E627411B550FD00EC5A05 /* dosbox.cpp in Sources */,
 				E71E627511B550FD00EC5A05 /* fpu.cpp in Sources */,
 				E71E627C11B550FD00EC5A05 /* midi.cpp in Sources */,
 				E71E628211B550FD00EC5A05 /* render.cpp in Sources */,
+				3718FDA321EB09250099ED9B /* SamplerateAdapter.cpp in Sources */,
 				E71E628411B550FD00EC5A05 /* render_scalers.cpp in Sources */,
 				E71E628C11B550FD00EC5A05 /* sdl_gui.cpp in Sources */,
 				E71E628D11B550FD00EC5A05 /* sdl_mapper.cpp in Sources */,
 				E71E628E11B550FD00EC5A05 /* sdlmain.cpp in Sources */,
 				E71E628F11B550FD00EC5A05 /* adlib.cpp in Sources */,
 				E71E629111B550FD00EC5A05 /* cmos.cpp in Sources */,
+				3718FDC921EB09250099ED9B /* ROMInfo.cpp in Sources */,
 				E71E629211B550FD00EC5A05 /* dbopl.cpp in Sources */,
 				E71E629411B550FD00EC5A05 /* disney.cpp in Sources */,
 				E71E629511B550FD00EC5A05 /* dma.cpp in Sources */,
@@ -3725,19 +4078,27 @@
 				E71E62A111B550FD00EC5A05 /* mpu401.cpp in Sources */,
 				E71E62A211B550FD00EC5A05 /* opl.cpp in Sources */,
 				E71E62A411B550FD00EC5A05 /* pcspeaker.cpp in Sources */,
+				3718FD9021EB09250099ED9B /* Analog.cpp in Sources */,
 				E71E62A511B550FD00EC5A05 /* pic.cpp in Sources */,
 				E71E62A611B550FD00EC5A05 /* sblaster.cpp in Sources */,
 				E71E62A711B550FD00EC5A05 /* directserial.cpp in Sources */,
 				E71E62A911B550FD00EC5A05 /* libserial.cpp in Sources */,
 				E71E62AB11B550FD00EC5A05 /* misc_util.cpp in Sources */,
+				3718FD9321EB09250099ED9B /* Partial.cpp in Sources */,
 				E71E62AD11B550FD00EC5A05 /* nullmodem.cpp in Sources */,
+				3718FD9121EB09250099ED9B /* TVF.cpp in Sources */,
 				E71E62AF11B550FD00EC5A05 /* serialdummy.cpp in Sources */,
 				E71E62B111B550FD00EC5A05 /* serialport.cpp in Sources */,
+				3718FD9D21EB09250099ED9B /* Part.cpp in Sources */,
 				E71E62B211B550FD00EC5A05 /* softmodem.cpp in Sources */,
 				E71E62B411B550FD00EC5A05 /* tandy_sound.cpp in Sources */,
+				3718FD9421EB09250099ED9B /* LA32WaveGenerator.cpp in Sources */,
+				3718FD9721EB09250099ED9B /* c_interface.cpp in Sources */,
 				E71E62B511B550FD00EC5A05 /* timer.cpp in Sources */,
 				E71E62B611B550FD00EC5A05 /* vga.cpp in Sources */,
+				3718FD8721EB09250099ED9B /* LA32FloatWaveGenerator.cpp in Sources */,
 				E71E62B711B550FD00EC5A05 /* vga_attr.cpp in Sources */,
+				3718FDC821EB09250099ED9B /* FileStream.cpp in Sources */,
 				E71E62B811B550FD00EC5A05 /* vga_crtc.cpp in Sources */,
 				E71E62B911B550FD00EC5A05 /* vga_dac.cpp in Sources */,
 				E71E62BA11B550FD00EC5A05 /* vga_draw.cpp in Sources */,
@@ -3753,32 +4114,43 @@
 				E71E62C311B550FD00EC5A05 /* vga_xga.cpp in Sources */,
 				E71E62C411B550FD00EC5A05 /* bios.cpp in Sources */,
 				E71E62C511B550FD00EC5A05 /* bios_disk.cpp in Sources */,
+				3718FD9E21EB09250099ED9B /* MidiStreamParser.cpp in Sources */,
 				E71E62C611B550FD00EC5A05 /* bios_keyboard.cpp in Sources */,
 				E71E62C711B550FD00EC5A05 /* ems.cpp in Sources */,
+				3718FDA121EB09250099ED9B /* SoxrAdapter.cpp in Sources */,
 				E71E62C811B550FD00EC5A05 /* int10.cpp in Sources */,
 				E71E62CA11B550FD00EC5A05 /* int10_char.cpp in Sources */,
 				E71E62CB11B550FD00EC5A05 /* int10_memory.cpp in Sources */,
+				3718FDC721EB09250099ED9B /* PartialManager.cpp in Sources */,
+				3718FD3621EAFBDC0099ED9B /* midi_mt32.cpp in Sources */,
 				E71E62CC11B550FD00EC5A05 /* int10_misc.cpp in Sources */,
 				E71E62CD11B550FD00EC5A05 /* int10_modes.cpp in Sources */,
 				E71E62CE11B550FD00EC5A05 /* int10_pal.cpp in Sources */,
 				E71E62CF11B550FD00EC5A05 /* int10_put_pixel.cpp in Sources */,
 				E71E62D011B550FD00EC5A05 /* int10_vesa.cpp in Sources */,
 				E71E62D111B550FD00EC5A05 /* int10_video_state.cpp in Sources */,
+				3718FD9221EB09250099ED9B /* SampleRateConverter.cpp in Sources */,
 				E71E62D211B550FD00EC5A05 /* int10_vptable.cpp in Sources */,
 				E71E62D411B550FD00EC5A05 /* mouse.cpp in Sources */,
+				3718FDBC21EB09250099ED9B /* Synth.cpp in Sources */,
 				E71E62D511B550FD00EC5A05 /* xms.cpp in Sources */,
 				E71E62D711B550FD00EC5A05 /* gui_tk.cpp in Sources */,
+				3718FD8621EB09250099ED9B /* TVA.cpp in Sources */,
+				3718FDAD21EB09250099ED9B /* SincResampler.cpp in Sources */,
 				E71E62DA11B550FD00EC5A05 /* zmbv.cpp in Sources */,
 				E71E62DC11B550FD00EC5A05 /* cross.cpp in Sources */,
+				3718FDB021EB09250099ED9B /* FIRResampler.cpp in Sources */,
 				E71E62DE11B550FD00EC5A05 /* messages.cpp in Sources */,
 				E71E62DF11B550FD00EC5A05 /* programs.cpp in Sources */,
 				E71E62E011B550FD00EC5A05 /* setup.cpp in Sources */,
 				E71E62E111B550FD00EC5A05 /* support.cpp in Sources */,
+				3718FDB221EB09250099ED9B /* InternalResampler.cpp in Sources */,
 				E71E62E311B550FD00EC5A05 /* shell.cpp in Sources */,
 				E71E62E411B550FD00EC5A05 /* shell_batch.cpp in Sources */,
 				E71E62E511B550FD00EC5A05 /* shell_cmds.cpp in Sources */,
 				E71E62E611B550FD00EC5A05 /* shell_misc.cpp in Sources */,
 				37992B2821D322BA00817702 /* sn76496.cpp in Sources */,
+				3718FD8D21EB09250099ED9B /* File.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
