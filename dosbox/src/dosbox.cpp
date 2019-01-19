@@ -429,9 +429,9 @@ void DOSBOX_Init(void) {
 	Pint->SetMinMax(1,63);
 	Pint->Set_help(
 		"Amount of memory DOSBox has in megabytes.\n"
-		"This value is best left at its default to avoid problems with some games,\n"
-		"though few games might require a higher value.\n"
-		"There is generally no speed advantage when raising this value.");
+		"  This value is best left at its default to avoid problems with some games,\n"
+		"  though few games might require a higher value.\n"
+		"  There is generally no speed advantage when raising this value.");
 	secprop->AddInitFunction(&CALLBACK_Init);
 	secprop->AddInitFunction(&PIC_Init);//done
 	secprop->AddInitFunction(&PROGRAMS_Init);
@@ -449,9 +449,9 @@ void DOSBOX_Init(void) {
 	Pmulti = secprop->Add_multi("scaler",Property::Changeable::Always," ");
 	Pmulti->SetValue("normal2x");
 	Pmulti->Set_help("Scaler used to enlarge/enhance low resolution modes. If 'forced' is appended,\n"
-	                 "then the scaler will be used even if the result might not be desired.\n"
-					 "To fit a scaler in the resolution used at full screen may require a border or side bars,\n"
-					 "to fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.");
+	                 "  then the scaler will be used even if the result might not be desired.\n"
+	                 "  To fit a scaler in the resolution used at full screen may require a border or side bars,\n"
+	                 "  to fill the screen entirely, depending on your hardware, a different scaler/fullresolution might work.");
 	Pstring = Pmulti->GetSection()->Add_string("type",Property::Changeable::Always,"normal2x");
 
 	const char *scalers[] = { 
@@ -478,7 +478,7 @@ void DOSBOX_Init(void) {
 	Pstring = secprop->Add_string("core",Property::Changeable::WhenIdle,"auto");
 	Pstring->Set_values(cores);
 	Pstring->Set_help("CPU Core used in emulation. auto will switch to dynamic if available and\n"
-		"appropriate.");
+	                  "appropriate.");
 
 	const char* cputype_values[] = { "auto", "386", "386_slow", "486_slow", "pentium_slow", "386_prefetch", 0};
 	Pstring = secprop->Add_string("cputype",Property::Changeable::Always,"auto");
@@ -493,10 +493,10 @@ void DOSBOX_Init(void) {
 		"Cycles can be set in 3 ways:\n"
 		"  'auto'          tries to guess what a game needs.\n"
 		"                  It usually works, but can fail for certain games.\n"
-		"  'fixed #number' will set a fixed amount of cycles. This is what you usually\n"
-		"                  need if 'auto' fails (Example: fixed 4000).\n"
-		"  'max'           will allocate as much cycles as your computer is able to\n"
-		"                  handle.");
+		"  'fixed #number' will set a fixed amount of cycles. This is what you usually\n" 
+	        "                  need if 'auto' fails. (Example: fixed 4000).\n"
+		"  'max'           will allocate as much cycles as your computer is able to\n" 
+	        "                  handle.");
 
 	const char* cyclest[] = { "auto","fixed","max","%u",0 };
 	Pstring = Pmulti_remain->GetSection()->Add_string("type",Property::Changeable::Always,"auto");
@@ -504,7 +504,7 @@ void DOSBOX_Init(void) {
 	Pstring->Set_values(cyclest);
 
 	Pstring = Pmulti_remain->GetSection()->Add_string("parameters",Property::Changeable::Always,"");
-
+	
 	Pint = secprop->Add_int("cycleup",Property::Changeable::Always,10);
 	Pint->SetMinMax(1,1000000);
 	Pint->Set_help("Amount of cycles to decrease/increase with keycombos.(CTRL-F11/CTRL-F12)");
@@ -512,7 +512,7 @@ void DOSBOX_Init(void) {
 	Pint = secprop->Add_int("cycledown",Property::Changeable::Always,20);
 	Pint->SetMinMax(1,1000000);
 	Pint->Set_help("Setting it lower than 100 will be a percentage.");
-
+		
 #if C_FPU
 	secprop->AddInitFunction(&FPU_Init);
 #endif
@@ -543,12 +543,7 @@ void DOSBOX_Init(void) {
 	
 	const char* mputypes[] = { "intelligent", "uart", "none",0};
 	// FIXME: add some way to offer the actually available choices.
-
-#ifdef C_FLUIDSYNTH
-	const char *devices[] = { "default", "win32", "alsa", "oss", "coreaudio", "coremidi", "mt32", "fluidsynth", "none", 0};
-#else
 	const char *devices[] = { "default", "win32", "alsa", "oss", "coreaudio", "coremidi", "mt32", "none", 0};
-#endif
 	Pstring = secprop->Add_string("mpu401",Property::Changeable::WhenIdle,"intelligent");
 	Pstring->Set_values(mputypes);
 	Pstring->Set_help("Type of MPU-401 to emulate.");
@@ -558,78 +553,10 @@ void DOSBOX_Init(void) {
 	Pstring->Set_help("Device that will receive the MIDI data from MPU-401.");
 
 	Pstring = secprop->Add_string("midiconfig",Property::Changeable::WhenIdle,"");
-	Pstring->Set_help("Special configuration options for the device driver. This is usually the id or part of the name of the device you want to use (find the id/name with mixer/listmidi).\n"
-	                  "Or in the case of coreaudio, you can specify a soundfont here.\n"
-	                  "When using a Roland MT-32 rev. 0 as midi output device, some games may require a delay in order to prevent 'buffer overflow' issues.\n"
-	                  "In that case, add 'delaysysex', for example: midiconfig=2 delaysysex\n"
-	                  "See the README/Manual for more details.");
-	
-#ifdef C_FLUIDSYNTH
-	const char *fluiddrivers[] = {"pulseaudio", "alsa", "oss", "coreaudio", "dsound", "portaudio", "sndman", "jack", "file", "default",0};
-	Pstring = secprop->Add_string("fluid.driver",Property::Changeable::WhenIdle,"default");
-	Pstring->Set_values(fluiddrivers);
-	Pstring->Set_help("Driver to use with Fluidsynth, not needed under Windows. Available drivers depend on what Fluidsynth was compiled with");
-
-	Pstring = secprop->Add_string("fluid.soundfont",Property::Changeable::WhenIdle,"");
-	Pstring->Set_help("Soundfont to use with Fluidsynth. One must be specified.");
-
-	Pstring = secprop->Add_string("fluid.samplerate",Property::Changeable::WhenIdle,"48000");
-	Pstring->Set_help("Sample rate to use with Fluidsynth.");
-
-	Pstring = secprop->Add_string("fluid.gain",Property::Changeable::WhenIdle,".6");
-	Pstring->Set_help("Fluidsynth gain.");
-
-	Pint = secprop->Add_int("fluid.polyphony",Property::Changeable::WhenIdle,256);
-	Pint->Set_help("Fluidsynth polyphony.");
-
-	Pstring = secprop->Add_string("fluid.cores",Property::Changeable::WhenIdle,"default");
-	Pstring->Set_help("Fluidsynth CPU cores to use, default.");
-
-	Pstring = secprop->Add_string("fluid.periods",Property::Changeable::WhenIdle,"8");
-	Pstring->Set_help("Fluidsynth periods.");
-
-	Pstring = secprop->Add_string("fluid.periodsize",Property::Changeable::WhenIdle,"512");
-	Pstring->Set_help("Fluidsynth period size.");
-
-	const char *fluidreverb[] = {"no", "yes",0};
-	Pstring = secprop->Add_string("fluid.reverb",Property::Changeable::WhenIdle,"yes");	
-	Pstring->Set_values(fluidreverb);
-	Pstring->Set_help("Fluidsynth use reverb.");
-
-	const char *fluidchorus[] = {"no", "yes",0};
-	Pstring = secprop->Add_string("fluid.chorus",Property::Changeable::WhenIdle,"yes");	
-	Pstring->Set_values(fluidchorus);
-	Pstring->Set_help("Fluidsynth use chorus.");
-
-	Pstring = secprop->Add_string("fluid.reverb,roomsize",Property::Changeable::WhenIdle,".61");
-	Pstring->Set_help("Fluidsynth reverb room size.");
-
-	Pstring = secprop->Add_string("fluid.reverb.damping",Property::Changeable::WhenIdle,".23");
-	Pstring->Set_help("Fluidsynth reverb damping.");
-
-	Pstring = secprop->Add_string("fluid.reverb.width",Property::Changeable::WhenIdle,".76");
-	Pstring->Set_help("Fluidsynth reverb width.");
-
-	Pstring = secprop->Add_string("fluid.reverb.level",Property::Changeable::WhenIdle,".57");
-	Pstring->Set_help("Fluidsynth reverb level.");
-
-	Pint = secprop->Add_int("fluid.chorus.number",Property::Changeable::WhenIdle,3);	
-	Pint->Set_help("Fluidsynth chorus voices");
-
-	Pstring = secprop->Add_string("fluid.chorus.level",Property::Changeable::WhenIdle,"1.2");
-	Pstring->Set_help("Fluidsynth chorus level.");
-
-	Pstring = secprop->Add_string("fluid.chorus.speed",Property::Changeable::WhenIdle,".3");
-	Pstring->Set_help("Fluidsynth chorus speed.");
-
-	Pstring = secprop->Add_string("fluid.chorus.depth",Property::Changeable::WhenIdle,"8.0");
-	Pstring->Set_help("Fluidsynth chorus depth.");
-
-	const char *fluidchorustypes[] = {"0", "1",0};
-	Pint = secprop->Add_int("fluid.chorus.type",Property::Changeable::WhenIdle,0);
-	Pint->Set_values(fluidchorustypes);
-	Pint->Set_help("Fluidsynth chorus type. 0 is sine wave, 1 is triangle wave.");
-#endif
+	Pstring->Set_help("Special configuration options for the device driver. This is usually the id of the device you want to use\n"
+	                  "  (find the id with mixer/listmidi).\n"
+	                  "  Or in the case of coreaudio, you can specify a soundfont here.\n"
+	                  "  See the README/Manual for more details.");
 
 #include "mt32options.h"
 
@@ -638,7 +565,7 @@ void DOSBOX_Init(void) {
 #endif
 
 	secprop=control->AddSection_prop("sblaster",&SBLASTER_Init,true);//done
-
+	
 	const char* sbtypes[] = { "sb1", "sb2", "sbpro1", "sbpro2", "sb16", "gb", "none", 0 };
 	Pstring = secprop->Add_string("sbtype",Property::Changeable::WhenIdle,"sb16");
 	Pstring->Set_values(sbtypes);
@@ -663,12 +590,12 @@ void DOSBOX_Init(void) {
 	Pbool = secprop->Add_bool("sbmixer",Property::Changeable::WhenIdle,true);
 	Pbool->Set_help("Allow the soundblaster mixer to modify the DOSBox mixer.");
 
-	const char* oplmodes[]={ "auto", "cms", "opl2", "dualopl2", "opl3", "opl3gold", "none", 0};
+	const char* oplmodes[]={ "auto", "cms", "opl2", "dualopl2", "opl3", "none", 0};
 	Pstring = secprop->Add_string("oplmode",Property::Changeable::WhenIdle,"auto");
 	Pstring->Set_values(oplmodes);
 	Pstring->Set_help("Type of OPL emulation. On 'auto' the mode is determined by sblaster type. All OPL modes are Adlib-compatible, except for 'cms'.");
 
-	const char* oplemus[]={ "default", "compat", "fast", "mame", "nuked", 0};
+	const char* oplemus[]={ "default", "compat", "fast", 0};
 	Pstring = secprop->Add_string("oplemu",Property::Changeable::WhenIdle,"default");
 	Pstring->Set_values(oplemus);
 	Pstring->Set_help("Provider for the OPL emulation. compat might provide better quality (see oplrate as well).");
@@ -677,13 +604,9 @@ void DOSBOX_Init(void) {
 	Pint->Set_values(oplrates);
 	Pint->Set_help("Sample rate of OPL music emulation. Use 49716 for highest quality (set the mixer rate accordingly).");
 
-	Pint = secprop->Add_int("fmstrength",Property::Changeable::WhenIdle,150);
-	Pint->SetMinMax(1,1000);
-	Pint->Set_help("Strength of the FM playback volume in percent, in relation to PCM playback volume. Default is 150.\n"
-	"Possible Values: 1 to 1000 (0.01x to 10x)");
 
 	secprop=control->AddSection_prop("gus",&GUS_Init,true); //done
-	Pbool = secprop->Add_bool("gus",Property::Changeable::WhenIdle,false);
+	Pbool = secprop->Add_bool("gus",Property::Changeable::WhenIdle,false); 	
 	Pbool->Set_help("Enable the Gravis Ultrasound emulation.");
 
 	Pint = secprop->Add_int("gusrate",Property::Changeable::WhenIdle,44100);
@@ -722,20 +645,20 @@ void DOSBOX_Init(void) {
 	Pstring = secprop->Add_string("tandy",Property::Changeable::WhenIdle,"auto");
 	Pstring->Set_values(tandys);
 	Pstring->Set_help("Enable Tandy Sound System emulation. For 'auto', emulation is present only if machine is set to 'tandy'.");
-
+	
 	Pint = secprop->Add_int("tandyrate",Property::Changeable::WhenIdle,44100);
 	Pint->Set_values(rates);
 	Pint->Set_help("Sample rate of the Tandy 3-Voice generation.");
 
 	secprop->AddInitFunction(&DISNEY_Init,true);//done
-
+	
 	Pbool = secprop->Add_bool("disney",Property::Changeable::WhenIdle,true);
 	Pbool->Set_help("Enable Disney Sound Source emulation. (Covox Voice Master and Speech Thing compatible).");
 
 	secprop=control->AddSection_prop("joystick",&BIOS_Init,false);//done
 	secprop->AddInitFunction(&INT10_Init);
 	secprop->AddInitFunction(&MOUSE_Init); //Must be after int10 as it uses CurMode
-	secprop->AddInitFunction(&JOYSTICK_Init,true);
+	secprop->AddInitFunction(&JOYSTICK_Init);
 	const char* joytypes[] = { "auto", "2axis", "4axis", "4axis_2", "fcs", "ch", "none",0};
 	Pstring = secprop->Add_string("joysticktype",Property::Changeable::WhenIdle,"auto");
 	Pstring->Set_values(joytypes);
@@ -754,25 +677,17 @@ void DOSBOX_Init(void) {
 
 	Pbool = secprop->Add_bool("autofire",Property::Changeable::WhenIdle,false);
 	Pbool->Set_help("continuously fires as long as you keep the button pressed.");
-
+	
 	Pbool = secprop->Add_bool("swap34",Property::Changeable::WhenIdle,false);
 	Pbool->Set_help("swap the 3rd and the 4th axis. Can be useful for certain joysticks.");
 
 	Pbool = secprop->Add_bool("buttonwrap",Property::Changeable::WhenIdle,false);
 	Pbool->Set_help("enable button wrapping at the number of emulated buttons.");
-	
-	Pbool = secprop->Add_bool("circularinput",Property::Changeable::WhenIdle,false);
-	Pbool->Set_help("enable translation of circular input to square output.\n"
-	                "Try enabling this if your left analog stick can only move in a circle.");
-
-	Pint = secprop->Add_int("deadzone",Property::Changeable::WhenIdle,10);
-	Pint->SetMinMax(0,100);
-	Pint->Set_help("the percentage of motion to ignore. 100 turns the stick into a digital one.");
 
 	secprop=control->AddSection_prop("serial",&SERIAL_Init,true);
 	const char* serials[] = { "dummy", "disabled", "modem", "nullmodem",
 	                          "directserial",0 };
-
+   
 	Pmulti_remain = secprop->Add_multiremain("serial1",Property::Changeable::WhenIdle," ");
 	Pstring = Pmulti_remain->GetSection()->Add_string("type",Property::Changeable::WhenIdle,"dummy");
 	Pmulti_remain->SetValue("dummy");
@@ -819,13 +734,8 @@ void DOSBOX_Init(void) {
 	Pbool->Set_help("Enable XMS support.");
 
 	secprop->AddInitFunction(&EMS_Init,true);//done
-	const char* ems_settings[] = { "true", "emsboard", "emm386", "false", 0};
-	Pstring = secprop->Add_string("ems",Property::Changeable::WhenIdle,"true");
-	Pstring->Set_values(ems_settings);
-	Pstring->Set_help("Enable EMS support. The default (=true) provides the best\n"
-		"compatibility but certain applications may run better with\n"
-		"other choices, or require EMS support to be disabled (=false)\n"
-		"to work at all.");
+	Pbool = secprop->Add_bool("ems",Property::Changeable::WhenIdle,true);
+	Pbool->Set_help("Enable EMS support.");
 
 	Pbool = secprop->Add_bool("umb",Property::Changeable::WhenIdle,true);
 	Pbool->Set_help("Enable UMB support.");
