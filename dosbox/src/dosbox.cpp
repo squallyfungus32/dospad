@@ -663,12 +663,12 @@ void DOSBOX_Init(void) {
 	Pbool = secprop->Add_bool("sbmixer",Property::Changeable::WhenIdle,true);
 	Pbool->Set_help("Allow the soundblaster mixer to modify the DOSBox mixer.");
 
-	const char* oplmodes[]={ "auto", "cms", "opl2", "dualopl2", "opl3", "opl3gold", "none", 0};
+	const char* oplmodes[]={ "auto", "cms", "opl2", "dualopl2", "opl3", "none", 0};
 	Pstring = secprop->Add_string("oplmode",Property::Changeable::WhenIdle,"auto");
 	Pstring->Set_values(oplmodes);
 	Pstring->Set_help("Type of OPL emulation. On 'auto' the mode is determined by sblaster type. All OPL modes are Adlib-compatible, except for 'cms'.");
 
-	const char* oplemus[]={ "default", "compat", "fast", "mame", "nuked", 0};
+	const char* oplemus[]={ "default", "compat", "fast", 0};
 	Pstring = secprop->Add_string("oplemu",Property::Changeable::WhenIdle,"default");
 	Pstring->Set_values(oplemus);
 	Pstring->Set_help("Provider for the OPL emulation. compat might provide better quality (see oplrate as well).");
@@ -676,11 +676,6 @@ void DOSBOX_Init(void) {
 	Pint = secprop->Add_int("oplrate",Property::Changeable::WhenIdle,44100);
 	Pint->Set_values(oplrates);
 	Pint->Set_help("Sample rate of OPL music emulation. Use 49716 for highest quality (set the mixer rate accordingly).");
-
-	Pint = secprop->Add_int("fmstrength",Property::Changeable::WhenIdle,150);
-	Pint->SetMinMax(1,1000);
-	Pint->Set_help("Strength of the FM playback volume in percent, in relation to PCM playback volume. Default is 150.\n"
-	"Possible Values: 1 to 1000 (0.01x to 10x)");
 
 	secprop=control->AddSection_prop("gus",&GUS_Init,true); //done
 	Pbool = secprop->Add_bool("gus",Property::Changeable::WhenIdle,false);
@@ -735,7 +730,7 @@ void DOSBOX_Init(void) {
 	secprop=control->AddSection_prop("joystick",&BIOS_Init,false);//done
 	secprop->AddInitFunction(&INT10_Init);
 	secprop->AddInitFunction(&MOUSE_Init); //Must be after int10 as it uses CurMode
-	secprop->AddInitFunction(&JOYSTICK_Init,true);
+	secprop->AddInitFunction(&JOYSTICK_Init);
 	const char* joytypes[] = { "auto", "2axis", "4axis", "4axis_2", "fcs", "ch", "none",0};
 	Pstring = secprop->Add_string("joysticktype",Property::Changeable::WhenIdle,"auto");
 	Pstring->Set_values(joytypes);
@@ -760,14 +755,6 @@ void DOSBOX_Init(void) {
 
 	Pbool = secprop->Add_bool("buttonwrap",Property::Changeable::WhenIdle,false);
 	Pbool->Set_help("enable button wrapping at the number of emulated buttons.");
-	
-	Pbool = secprop->Add_bool("circularinput",Property::Changeable::WhenIdle,false);
-	Pbool->Set_help("enable translation of circular input to square output.\n"
-	                "Try enabling this if your left analog stick can only move in a circle.");
-
-	Pint = secprop->Add_int("deadzone",Property::Changeable::WhenIdle,10);
-	Pint->SetMinMax(0,100);
-	Pint->Set_help("the percentage of motion to ignore. 100 turns the stick into a digital one.");
 
 	secprop=control->AddSection_prop("serial",&SERIAL_Init,true);
 	const char* serials[] = { "dummy", "disabled", "modem", "nullmodem",
@@ -819,13 +806,8 @@ void DOSBOX_Init(void) {
 	Pbool->Set_help("Enable XMS support.");
 
 	secprop->AddInitFunction(&EMS_Init,true);//done
-	const char* ems_settings[] = { "true", "emsboard", "emm386", "false", 0};
-	Pstring = secprop->Add_string("ems",Property::Changeable::WhenIdle,"true");
-	Pstring->Set_values(ems_settings);
-	Pstring->Set_help("Enable EMS support. The default (=true) provides the best\n"
-		"compatibility but certain applications may run better with\n"
-		"other choices, or require EMS support to be disabled (=false)\n"
-		"to work at all.");
+    Pbool = secprop->Add_bool("ems",Property::Changeable::WhenIdle,true);
+    Pbool->Set_help("Enable EMS support.");
 
 	Pbool = secprop->Add_bool("umb",Property::Changeable::WhenIdle,true);
 	Pbool->Set_help("Enable UMB support.");

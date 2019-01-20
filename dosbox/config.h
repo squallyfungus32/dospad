@@ -121,6 +121,9 @@
 /* Define to 1 to use ALSA for MIDI */
 /* #undef HAVE_ALSA */
 
+/* Define to 1 to enable fluidsynth MIDI synthesis */
+#define C_FLUIDSYNTH 1
+
 /* Define to 1 if you have the <ddraw.h> header file. */
 /* #undef HAVE_DDRAW_H */
 

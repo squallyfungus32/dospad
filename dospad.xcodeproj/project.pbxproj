@@ -138,6 +138,11 @@
 		37992B2921D322BA00817702 /* saa1099.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37992B2421D322BA00817702 /* saa1099.cpp */; };
 		37992B2A21D322BA00817702 /* sn76496.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2521D322BA00817702 /* sn76496.h */; };
 		37992B2B21D322BA00817702 /* saa1099.h in Headers */ = {isa = PBXBuildFile; fileRef = 37992B2621D322BA00817702 /* saa1099.h */; };
+		37DE64BF21F1BB1300CEE269 /* libglib-2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DE64A921F1B2BD00CEE269 /* libglib-2.0.a */; };
+		37DE64C121F1BB1E00CEE269 /* libfluidsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DE64A321F1A73400CEE269 /* libfluidsynth.a */; };
+		37DE64C221F1BB4600CEE269 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DE64BD21F1B91E00CEE269 /* libiconv.tbd */; };
+		37E8AF3E21EC0E420039037F /* midi_fluidsynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E8AF3D21EC0E420039037F /* midi_fluidsynth.h */; };
+		37F392CA21EC31D800117989 /* fluidsynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F392C921EC31D800117989 /* fluidsynth.h */; };
 		37F3DC0821EBD5BD005E432B /* midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3DC0721EBD5BD005E432B /* midi.h */; };
 		9222DD4B1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
 		9222DD4C1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
@@ -1091,6 +1096,11 @@
 		37992B2421D322BA00817702 /* saa1099.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = saa1099.cpp; sourceTree = "<group>"; };
 		37992B2521D322BA00817702 /* sn76496.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sn76496.h; sourceTree = "<group>"; };
 		37992B2621D322BA00817702 /* saa1099.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = saa1099.h; sourceTree = "<group>"; };
+		37DE64A321F1A73400CEE269 /* libfluidsynth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfluidsynth.a; path = dosbox/libs/libfluidsynth.a; sourceTree = "<group>"; };
+		37DE64A921F1B2BD00CEE269 /* libglib-2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libglib-2.0.a"; path = "dosbox/libs/libglib-2.0.a"; sourceTree = "<group>"; };
+		37DE64BD21F1B91E00CEE269 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		37E8AF3D21EC0E420039037F /* midi_fluidsynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_fluidsynth.h; sourceTree = "<group>"; };
+		37F392C921EC31D800117989 /* fluidsynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fluidsynth.h; sourceTree = "<group>"; };
 		37F3DC0721EBD5BD005E432B /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		9222DD491CC43ADC00B321B9 /* MfiGameControllerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MfiGameControllerHandler.h; sourceTree = "<group>"; };
 		9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MfiGameControllerHandler.m; sourceTree = "<group>"; };
@@ -1741,6 +1751,7 @@
 				E77DB05611B5E13600B78E69 /* MessageUI.framework in Frameworks */,
 				E77DB05C11B5E17500B78E69 /* libstdc++.dylib in Frameworks */,
 				E7D6B8CF11BF332400D34665 /* libz.dylib in Frameworks */,
+				37DE64C221F1BB4600CEE269 /* libiconv.tbd in Frameworks */,
 				E7D6B8DA11BF34BC00D34665 /* libminizip.a in Frameworks */,
 				E79E4A0111EC6BF400DEAA7B /* libc.dylib in Frameworks */,
 				E778B2D812391AA6008AF49A /* libSDL_net.a in Frameworks */,
@@ -1753,6 +1764,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DE64C121F1BB1E00CEE269 /* libfluidsynth.a in Frameworks */,
+				37DE64BF21F1BB1300CEE269 /* libglib-2.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1868,6 +1881,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37DE64BD21F1B91E00CEE269 /* libiconv.tbd */,
+				37DE64A921F1B2BD00CEE269 /* libglib-2.0.a */,
+				37DE64A321F1A73400CEE269 /* libfluidsynth.a */,
 				E7B7F86F1DE1D70200590701 /* libc++.tbd */,
 				FDB9E4CC0DEB84540027A75A /* AudioToolbox.framework */,
 				FDB9E4060DEB81870027A75A /* AudioUnit.framework */,
@@ -2120,6 +2136,7 @@
 		E71E60F411B550FD00EC5A05 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				37F392C921EC31D800117989 /* fluidsynth.h */,
 				37F3DC0721EBD5BD005E432B /* midi.h */,
 				E71E60F511B550FD00EC5A05 /* bios.h */,
 				E71E60F611B550FD00EC5A05 /* bios_disk.h */,
@@ -2319,6 +2336,7 @@
 		E71E617D11B550FD00EC5A05 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				37E8AF3D21EC0E420039037F /* midi_fluidsynth.h */,
 				3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */,
 				3718FD3521EAFBDC0099ED9B /* midi_mt32.h */,
 				E71E617E11B550FD00EC5A05 /* dosbox_logo.h */,
@@ -3252,6 +3270,7 @@
 				3718FD8C21EB09250099ED9B /* BReverbModel.h in Headers */,
 				E71E623011B550FD00EC5A05 /* risc_armv4le-thumb-iw.h in Headers */,
 				E71E623111B550FD00EC5A05 /* risc_armv4le-thumb-niw.h in Headers */,
+				37F392CA21EC31D800117989 /* fluidsynth.h in Headers */,
 				E71E623211B550FD00EC5A05 /* risc_armv4le-thumb.h in Headers */,
 				E71E623311B550FD00EC5A05 /* risc_armv4le.h in Headers */,
 				E71E623411B550FD00EC5A05 /* risc_mipsel32.h in Headers */,
@@ -3305,6 +3324,7 @@
 				3718FDCA21EB09250099ED9B /* Analog.h in Headers */,
 				E71E628311B550FD00EC5A05 /* render_loops.h in Headers */,
 				3718FD8A21EB09250099ED9B /* Structures.h in Headers */,
+				37E8AF3E21EC0E420039037F /* midi_fluidsynth.h in Headers */,
 				E71E628511B550FD00EC5A05 /* render_scalers.h in Headers */,
 				E71E628611B550FD00EC5A05 /* render_simple.h in Headers */,
 				E71E628711B550FD00EC5A05 /* render_templates.h in Headers */,
@@ -4444,6 +4464,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 9488DDMQNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4454,7 +4478,10 @@
 				INFOPLIST_FILE = "dospad-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dosbox/libs",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -4468,7 +4495,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "armv7 arm64";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -4483,6 +4510,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9488DDMQNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
@@ -4490,7 +4521,10 @@
 				INFOPLIST_FILE = "dospad-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dosbox/libs",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -4505,7 +4539,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
-				VALID_ARCHS = "armv7 arm64";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -4523,10 +4557,18 @@
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = ./include;
+				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dosbox/libs",
+				);
 				ONLY_ACTIVE_ARCH = YES;
+				PRELINK_LIBS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = dosbox;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "d5f5deba-f8f7-44f6-afdc-d9450c99bb4d";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -4540,12 +4582,21 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = ./include;
+				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dosbox/libs",
+				);
 				ONLY_ACTIVE_ARCH = NO;
+				PRELINK_LIBS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = dosbox;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -4796,6 +4847,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 9488DDMQNT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
@@ -4803,7 +4858,10 @@
 				INFOPLIST_FILE = "dospad-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dosbox/libs",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -4818,7 +4876,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
-				VALID_ARCHS = "armv7 arm64";
+				VALID_ARCHS = "armv7 armv7s arm64";
 				ZERO_LINK = NO;
 			};
 			name = AppStore;
@@ -4830,12 +4888,21 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = ./include;
+				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dosbox/libs",
+				);
 				ONLY_ACTIVE_ARCH = NO;
+				PRELINK_LIBS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = dosbox;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
