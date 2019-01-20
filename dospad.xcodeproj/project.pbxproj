@@ -56,6 +56,7 @@
 		2A4546F917D2809F00D18563 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2A9CD12CD99EC0091B859 /* CoreMIDI.framework */; };
 		2A4546FA17D2812100D18563 /* PianoKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E794F3FE12DB4F0E00427836 /* PianoKeyboard.m */; };
 		2A4546FC17D2889700D18563 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4546FB17D2889700D18563 /* Default-568h@2x.png */; };
+		3704853821F50CE900F7C93A /* midi_fluidsynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3704853721F50CE900F7C93A /* midi_fluidsynth.cpp */; };
 		3718FD3321EAFB890099ED9B /* mt32options.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3221EAFB890099ED9B /* mt32options.h */; };
 		3718FD3621EAFBDC0099ED9B /* midi_mt32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */; };
 		3718FD3721EAFBDC0099ED9B /* midi_mt32.h in Headers */ = {isa = PBXBuildFile; fileRef = 3718FD3521EAFBDC0099ED9B /* midi_mt32.h */; };
@@ -1014,6 +1015,7 @@
 		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A4546FB17D2889700D18563 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3704853721F50CE900F7C93A /* midi_fluidsynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi_fluidsynth.cpp; sourceTree = "<group>"; };
 		3718FD3221EAFB890099ED9B /* mt32options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mt32options.h; sourceTree = "<group>"; };
 		3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi_mt32.cpp; sourceTree = "<group>"; };
 		3718FD3521EAFBDC0099ED9B /* midi_mt32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_mt32.h; sourceTree = "<group>"; };
@@ -2336,6 +2338,7 @@
 		E71E617D11B550FD00EC5A05 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				3704853721F50CE900F7C93A /* midi_fluidsynth.cpp */,
 				37E8AF3D21EC0E420039037F /* midi_fluidsynth.h */,
 				3718FD3421EAFBDC0099ED9B /* midi_mt32.cpp */,
 				3718FD3521EAFBDC0099ED9B /* midi_mt32.h */,
@@ -4148,6 +4151,7 @@
 				3718FDC721EB09250099ED9B /* PartialManager.cpp in Sources */,
 				3718FD3621EAFBDC0099ED9B /* midi_mt32.cpp in Sources */,
 				E71E62CC11B550FD00EC5A05 /* int10_misc.cpp in Sources */,
+				3704853821F50CE900F7C93A /* midi_fluidsynth.cpp in Sources */,
 				E71E62CD11B550FD00EC5A05 /* int10_modes.cpp in Sources */,
 				E71E62CE11B550FD00EC5A05 /* int10_pal.cpp in Sources */,
 				E71E62CF11B550FD00EC5A05 /* int10_put_pixel.cpp in Sources */,

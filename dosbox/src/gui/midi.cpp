@@ -72,6 +72,7 @@ MidiHandler Midi_none;
 
 #ifdef C_FLUIDSYNTH
 #include "midi_fluidsynth.h"
+static MidiHandler_fluidsynth &Midi_fluid = MidiHandler_fluidsynth::GetInstance();
 #endif
 
 #include "midi_mt32.h"

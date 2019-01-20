@@ -565,11 +565,6 @@ void DOSBOX_Init(void) {
 	                  "See the README/Manual for more details.");
 	
 #ifdef C_FLUIDSYNTH
-	const char *fluiddrivers[] = {"pulseaudio", "alsa", "oss", "coreaudio", "dsound", "portaudio", "sndman", "jack", "file", "default",0};
-	Pstring = secprop->Add_string("fluid.driver",Property::Changeable::WhenIdle,"default");
-	Pstring->Set_values(fluiddrivers);
-	Pstring->Set_help("Driver to use with Fluidsynth, not needed under Windows. Available drivers depend on what Fluidsynth was compiled with");
-
 	Pstring = secprop->Add_string("fluid.soundfont",Property::Changeable::WhenIdle,"");
 	Pstring->Set_help("Soundfont to use with Fluidsynth. One must be specified.");
 
