@@ -568,7 +568,7 @@ void DOSBOX_Init(void) {
 	Pstring = secprop->Add_string("fluid.soundfont",Property::Changeable::WhenIdle,"");
 	Pstring->Set_help("Soundfont to use with Fluidsynth. One must be specified.");
 
-	Pstring = secprop->Add_string("fluid.samplerate",Property::Changeable::WhenIdle,"48000");
+	Pstring = secprop->Add_string("fluid.samplerate",Property::Changeable::WhenIdle,"44100");
 	Pstring->Set_help("Sample rate to use with Fluidsynth.");
 
 	Pstring = secprop->Add_string("fluid.gain",Property::Changeable::WhenIdle,".6");

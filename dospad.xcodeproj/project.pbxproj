@@ -143,6 +143,10 @@
 		37DE64C121F1BB1E00CEE269 /* libfluidsynth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DE64A321F1A73400CEE269 /* libfluidsynth.a */; };
 		37DE64C221F1BB4600CEE269 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 37DE64BD21F1B91E00CEE269 /* libiconv.tbd */; };
 		37E8AF3E21EC0E420039037F /* midi_fluidsynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E8AF3D21EC0E420039037F /* midi_fluidsynth.h */; };
+		37F1DCF521F83AB4009E415A /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F1DCF321F83AB3009E415A /* libvorbis.a */; };
+		37F1DCF621F83AB4009E415A /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F1DCF421F83AB3009E415A /* libsndfile.a */; };
+		37F1DCF921F83B29009E415A /* libFLAC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F1DCF721F83B28009E415A /* libFLAC.a */; };
+		37F1DCFA21F83B29009E415A /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F1DCF821F83B28009E415A /* libogg.a */; };
 		37F392CA21EC31D800117989 /* fluidsynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F392C921EC31D800117989 /* fluidsynth.h */; };
 		37F3DC0821EBD5BD005E432B /* midi.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F3DC0721EBD5BD005E432B /* midi.h */; };
 		9222DD4B1CC43ADC00B321B9 /* MfiGameControllerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9222DD4A1CC43ADC00B321B9 /* MfiGameControllerHandler.m */; };
@@ -1102,6 +1106,10 @@
 		37DE64A921F1B2BD00CEE269 /* libglib-2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libglib-2.0.a"; path = "dosbox/libs/libglib-2.0.a"; sourceTree = "<group>"; };
 		37DE64BD21F1B91E00CEE269 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		37E8AF3D21EC0E420039037F /* midi_fluidsynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi_fluidsynth.h; sourceTree = "<group>"; };
+		37F1DCF321F83AB3009E415A /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvorbis.a; path = dosbox/libs/libvorbis.a; sourceTree = "<group>"; };
+		37F1DCF421F83AB3009E415A /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsndfile.a; path = dosbox/libs/libsndfile.a; sourceTree = "<group>"; };
+		37F1DCF721F83B28009E415A /* libFLAC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFLAC.a; path = dosbox/libs/libFLAC.a; sourceTree = "<group>"; };
+		37F1DCF821F83B28009E415A /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = dosbox/libs/libogg.a; sourceTree = "<group>"; };
 		37F392C921EC31D800117989 /* fluidsynth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fluidsynth.h; sourceTree = "<group>"; };
 		37F3DC0721EBD5BD005E432B /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
 		9222DD491CC43ADC00B321B9 /* MfiGameControllerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MfiGameControllerHandler.h; sourceTree = "<group>"; };
@@ -1766,8 +1774,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F1DCF521F83AB4009E415A /* libvorbis.a in Frameworks */,
+				37F1DCFA21F83B29009E415A /* libogg.a in Frameworks */,
 				37DE64C121F1BB1E00CEE269 /* libfluidsynth.a in Frameworks */,
 				37DE64BF21F1BB1300CEE269 /* libglib-2.0.a in Frameworks */,
+				37F1DCF621F83AB4009E415A /* libsndfile.a in Frameworks */,
+				37F1DCF921F83B29009E415A /* libFLAC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1883,6 +1895,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37F1DCF721F83B28009E415A /* libFLAC.a */,
+				37F1DCF821F83B28009E415A /* libogg.a */,
+				37F1DCF421F83AB3009E415A /* libsndfile.a */,
+				37F1DCF321F83AB3009E415A /* libvorbis.a */,
 				37DE64BD21F1B91E00CEE269 /* libiconv.tbd */,
 				37DE64A921F1B2BD00CEE269 /* libglib-2.0.a */,
 				37DE64A321F1A73400CEE269 /* libfluidsynth.a */,
@@ -4522,6 +4538,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = ./include;
 				INFOPLIST_FILE = "dospad-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4560,7 +4577,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = ./include;
+				HEADER_SEARCH_PATHS = "./include ";
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -4589,7 +4606,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = ./include;
+				HEADER_SEARCH_PATHS = "./include ";
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -4859,6 +4876,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = ./include;
 				INFOPLIST_FILE = "dospad-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4895,7 +4913,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = IPHONEOS;
 				GCC_VERSION = "";
-				HEADER_SEARCH_PATHS = ./include;
+				HEADER_SEARCH_PATHS = "./include ";
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
