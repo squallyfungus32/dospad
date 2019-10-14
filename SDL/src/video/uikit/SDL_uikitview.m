@@ -119,6 +119,18 @@ void SDL_init_keyboard()
     return sqrt(dx*dx + dy*dy );
 }
 
+-(float) getMouseScale
+{
+    float mouseSpeed = [[NSUserDefaults standardUserDefaults] floatForKey:@"mouse_speed"];
+    if (mouseSpeed == 0) mouseSpeed=0.5;
+    return 1+2*mouseSpeed;
+}
+
+-(bool) getMouseRelative
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"mouse_relative_enabled"];
+}
+
 -(void)holdButton:(NSNumber*)mouseIndex
 {
     int i = [mouseIndex intValue];
@@ -290,14 +302,30 @@ void SDL_init_keyboard()
     }
 }
 
+CGPoint prevpoint;
+
 - (void)pan:(UIPanGestureRecognizer *)recognizer {
     
     CGPoint point = [recognizer locationInView:self];
     
     if (recognizer.state == UIGestureRecognizerStateBegan)
-        SDL_WarpMouse(point.x, point.y);
+    {
+        if( [self getMouseRelative] )
+            prevpoint=point;
+        else
+            SDL_WarpMouse(point.x, point.y);
+    }
     else if (recognizer.state == UIGestureRecognizerStateChanged)
-        SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    {
+        if( [self getMouseRelative] )
+        {
+            float scale = [self getMouseScale];
+            SDL_SendMouseMotion(0, 1, (point.x-prevpoint.x) * scale, (point.y-prevpoint.y) * scale, 0);
+            prevpoint=point;
+        }
+        else
+            SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    }
     else if (recognizer.state == UIGestureRecognizerStateEnded)
         return;
 }
@@ -342,7 +370,8 @@ void SDL_init_keyboard()
 
     CGPoint point = [recognizer locationInView:self];
     
-    SDL_WarpMouse(point.x, point.y);
+    if ( ![self getMouseRelative] )
+        SDL_WarpMouse(point.x, point.y);
     
     if (recognizer.numberOfTouches == 1)
     {
@@ -367,7 +396,10 @@ void SDL_init_keyboard()
     
     if (recognizer.state == UIGestureRecognizerStateBegan)
     {
-        SDL_WarpMouse(point.x, point.y);
+        if( [self getMouseRelative] )
+            prevpoint=point;
+        else
+            SDL_WarpMouse(point.x, point.y);
         
         if (recognizer.numberOfTouches == 1)
             SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_LEFT);
@@ -375,7 +407,16 @@ void SDL_init_keyboard()
             SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged)
-        SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    {
+        if( [self getMouseRelative] )
+        {
+            float scale = [self getMouseScale];
+            SDL_SendMouseMotion(0, 1, (point.x-prevpoint.x) * scale, (point.y-prevpoint.y) * scale, 0);
+            prevpoint=point;
+        }
+        else
+            SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    }
     else if (recognizer.state == UIGestureRecognizerStateEnded)
     {
         if (recognizer.numberOfTouches == 1)
@@ -392,11 +433,24 @@ void SDL_init_keyboard()
     
     if (recognizer.state == UIGestureRecognizerStateBegan)
     {
-        SDL_WarpMouse(point.x, point.y);
+        if( [self getMouseRelative] )
+            prevpoint=point;
+        else
+            SDL_WarpMouse(point.x, point.y);
+        
         SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged)
-        SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    {
+        if( [self getMouseRelative] )
+        {
+            float scale = [self getMouseScale];
+            SDL_SendMouseMotion(0, 1, (point.x-prevpoint.x) * scale, (point.y-prevpoint.y) * scale, 0);
+            prevpoint=point;
+        }
+        else
+            SDL_SendMouseMotion(0, 0, point.x, point.y, 0);
+    }
     else if (recognizer.state == UIGestureRecognizerStateEnded)
         SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_RIGHT);
 }

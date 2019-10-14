@@ -90,6 +90,22 @@
 		</dict>
 		<dict>
 			<key>Title</key>
+			<string>Mouse</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Mouse Relative Movement Enabled</string>
+			<key>Key</key>
+			<string>mouse_relative_enabled</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string>Mouse Speed</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

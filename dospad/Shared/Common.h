@@ -56,6 +56,7 @@
  *       you must manually update SDL_uikitview.m!
  */
 #define kMouseSpeed            @"mouse_speed"
+#define kMouseRelativeEnabled  @"mouse_relative_enabled"
 
 
 #define BUILD_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
