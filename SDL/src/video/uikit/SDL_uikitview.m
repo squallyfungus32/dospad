@@ -375,17 +375,21 @@ CGPoint prevpoint;
     
     if (recognizer.numberOfTouches == 1)
     {
-        SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_LEFT);
-        // Must have or won't work
-        [NSThread sleepForTimeInterval:0.1];
-        SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_LEFT);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_LEFT);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_LEFT);
+            });
+        });
     }
     else if (recognizer.numberOfTouches == 2)
     {
-        SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
-        // Must have or won't work
-        [NSThread sleepForTimeInterval:0.1];
-        SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_RIGHT);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            SDL_SendMouseButton(0, SDL_PRESSED, SDL_BUTTON_RIGHT);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                SDL_SendMouseButton(0, SDL_RELEASED, SDL_BUTTON_RIGHT);
+            });
+        });
     }
     return;
 }
