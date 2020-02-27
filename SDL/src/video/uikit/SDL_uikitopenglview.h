@@ -31,6 +31,8 @@
 
 -(void)onResize:(CGSize)newSize;
 -(BOOL)onDoubleTap:(CGPoint)pt;
+-(BOOL)onTap:(CGPoint)pt;
+
 
 @end
 #endif

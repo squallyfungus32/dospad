@@ -703,7 +703,8 @@ CGPoint prevpoint;
 	keyboardVisible = NO;
 	/* add the UITextField (hidden) to our view */
 	[self addSubview:textField];
-    [self showKeyboard];
+    // Commented the following line to prevent keybaord from coming up at startup
+    // [self showKeyboard];
 	
 	/* create our SDL_Keyboard */
 	SDL_Keyboard keyboard;

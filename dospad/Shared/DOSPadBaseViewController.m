@@ -257,6 +257,18 @@ extern int SDL_SendKeyboardKey(int index, Uint8 state, SDL_scancode scancode);
     [screenView sendMouseEvent:0 left:NO down:NO];            
 }
 
+-(BOOL)onTap:(CGPoint)pt
+{
+    if (!DEFS_GET_INT(kDirectTouchEnabled) || [self isPortrait]){
+       screenX = -1;
+       screenY = -1;
+       return NO;
+    }
+
+    screenX = pt.x / (self.screenView.bounds.size.width * DEFS_GET_FLOAT(kDirectTouchXAxis));
+    screenY = pt.y / (self.screenView.bounds.size.height * DEFS_GET_FLOAT(kDirectTouchYAxis)); 
+}
+
 -(BOOL)onDoubleTap:(CGPoint)pt
 {
     // Do nothing

@@ -37,8 +37,12 @@
 
 #define kTransparency          @"transparency"
 #define kKeySoundEnabled       @"key_sound_enabled"
+#define kDirectTouchEnabled    @"direct_touch_enabled"
+#define kDirectTouchXAxis      @"direct_touch_x_axis"
+#define kDirectTouchYAxis      @"direct_touch_y_axis"
 #define kDoubleTapAsRightClick @"double_tap_as_right_click"
 #define kGamePadSoundEnabled   @"gamepad_sound_enabled"
+#define kLandbarMinimized      @"landbar_minimized"
 #define kDPadMovable           @"dpad_movable"
 #define kSmartKeyboardMappings @"smart_keyboard_mappings"
 #define kNumpadEnabled         @"numpad_enabled"

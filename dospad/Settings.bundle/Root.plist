@@ -70,6 +70,82 @@
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
+		        <dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Enable Direct Touch (Experimental)</string>
+			<key>Key</key>
+			<string>direct_touch_enabled</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSMultiValueSpecifier</string>
+            <key>Key</key>
+            <string>direct_touch_x_axis</string>
+            <key>DefaultValue</key>
+            <string>1</string>
+            <key>Title</key>
+            <string>Direct Touch Width Modifier</string>
+            <key>Titles</key>
+            <array>
+                <string>x0.5</string>
+                <string>x1</string>
+                <string>x2</string>
+                <string>x4</string>
+                <string>x6</string>
+                <string>x8</string>
+            </array>
+            <key>Values</key>
+            <array>
+                <string>0.5</string>
+                <string>1</string>
+                <string>2</string>
+                <string>4</string>
+                <string>6</string>
+                <string>8</string>
+            </array>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSMultiValueSpecifier</string>
+            <key>Key</key>
+            <string>direct_touch_y_axis</string>
+            <key>DefaultValue</key>
+            <string>1</string>
+            <key>Title</key>
+            <string>Direct Touch Height Modifier</string>
+            <key>Titles</key>
+            <array>
+                <string>x0.5</string>
+                <string>x1</string>
+                <string>x2</string>
+                <string>x4</string>
+                <string>x6</string>
+                <string>x8</string>
+            </array>
+            <key>Values</key>
+            <array>
+                <string>0.5</string>
+                <string>1</string>
+                <string>2</string>
+                <string>4</string>
+                <string>6</string>
+                <string>8</string>
+            </array>
+        </dict> 
+        <dict>
+ 			<key>Type</key>
+ 			<string>PSToggleSwitchSpecifier</string>
+ 			<key>Title</key>
+ 			<string>Minimize Landbar</string>
+ 			<key>Key</key>
+ 			<string>landbar_minimized</string>
+ 			<key>DefaultValue</key>
+ 			<false/>
+  		</dict>
 		<dict>
 			<key>Title</key>
 			<string>Overlay Control Transparency</string>
